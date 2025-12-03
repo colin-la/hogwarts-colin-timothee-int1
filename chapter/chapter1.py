@@ -2,8 +2,8 @@ from universe.character import *
 from utils.input_utils import *
 def introduction():
     input("Welcome to you, stranger. You will live an amazing story \n \
-        Without further a do, let's get started ! \n \
-        Press Enter to continue ...")
+    Without further a do, let's get started ! \n \
+    Press Enter to continue ...")
 
 def create_character():
     last_name = ask_text("Enter your character's last name: ")
