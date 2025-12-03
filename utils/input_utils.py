@@ -30,7 +30,7 @@ def ask_choice(message: str, options: list) -> int:
     print(message)
     for x in range(len(options)):
         print(f"{x+1}. {options[x]}")
-    result = ask_number(message, 1, len(options))
+    result = ask_number("Your choice: ", 1, len(options))
     return result
 
 
