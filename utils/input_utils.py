@@ -1,6 +1,9 @@
 import json
 
 def ask_text(message: str) -> str:
+    """
+    texte = ask_text("le message en question")
+    """
     anwser = ""
     while anwser == "":
         anwser = str(input(message+" ")).strip()
@@ -9,6 +12,9 @@ def ask_text(message: str) -> str:
 
 
 def ask_number(message: str, min_val=None, max_val=None) -> int:
+    """
+    number = ask_number("le message en question", 1, 10)
+    """
     anwser = min_val - 1
     while not (min_val <= anwser <= max_val):
         try:
@@ -17,12 +23,8 @@ def ask_number(message: str, min_val=None, max_val=None) -> int:
             anwser = min_val - 1
 
 
-
-
-
 def ask_choice(message: str, options: list) -> int:
     """
-    Met sous la forme :
     choix = ask_choice("le message en question", ["oui", "non", "jsp"])
     """
     print(message)
@@ -31,8 +33,12 @@ def ask_choice(message: str, options: list) -> int:
     result = ask_number(message, 1, len(options))
     return result
 
+
 def load_file (file_path: str):
-    with open(file_path, "r") as json_file:
+    """
+    data = load_file("le/chemin/du/fichier.json")
+    """
+    with open(file_path, "r", encoding="utf-8") as json_file:
         return json.load(json_file)
 
 
