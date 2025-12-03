@@ -30,9 +30,33 @@ def display_character(character: dict) -> None:
         else:
             print(character[key])
 
+def modify_money(character: dict, amount: int) -> None:
+    """
+    function modifying the amount of money a character has (use negative value to substract an amount of money)
+    """
+    character["Money"] += amount
+
+def add_item(character: dict, key: str, item: str) -> None:
+    """
+    function adding either an item in the inventory or a spell in the list of spells
+    """
+    if not(key in ["Inventory", "Spells"]):
+        raise TypeError("Key must be either 'Inventory' or 'Spells'")
+    else:
+        character[key].append(item)
+
 #################
 ##### Tests #####
 #################
+
 '''
-display_character(init_character("Potter", "Harry", {"Courage": 8, "Intelligence": 8, "Loyalty": 8, "Ambition": 8}))
+Harry = init_character("Potter", "Harry", {"Courage": 8, "Intelligence": 8, "Loyalty": 8, "Ambition": 8})
+print('\n\n\n INIT TESTS RUN SUCCESSFULLY\n\n')
+display_character(Harry)
+print('\n\n\n DISPLAY TESTS RUN SUCCESSFULLY\n\n')
+
+modify_money(Harry, 10)
+add_item(Harry, "Spells", "tortion_testicular")
+display_character(Harry)
+print('\n\n\n ADD_ITEM AND MONEY TESTS RUN SUCCESSFULLY\n\n')
 '''
