@@ -1,5 +1,9 @@
-from universe.character import *
+import sys
+sys.path.append('../')
+
+from universe.character import * 
 from utils.input_utils import *
+
 def introduction():
     input("Welcome to you, stranger. You will live an amazing story \n \
     Without further a do, let's get started ! \n \
@@ -25,7 +29,7 @@ def create_character():
 
 
 def receive_letter():
-    pass
+    pass 
 
 def meet_hagrid(character):
     pass
