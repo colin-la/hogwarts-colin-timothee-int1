@@ -27,7 +27,20 @@ def create_character():
 
 
 def receive_letter():
-    pass 
+    print("An owl flies through the window, delivering a letter sealed with the Hogwarts crest...")
+    print("“Dear Student,\n")
+    print("We are pleased to inform you that you have been accepted to Hogwarts")
+    print("School of Witchcraft and Wizardry!”\n")
+    choice = ask_choice("Do you accept this invitation and go to Hogwarts?\n", ["Yes, of course!", "No, I'd rather stay with Uncle Vernon..."])
+    if choice == 1:
+        print("Thank you, we'll be waiting you on the platform 9 and 3/4")
+        print("in order to take the Hogwarts Express")
+        
+    if choice == 2:
+        print("You tear up the letter, and Uncle Vernon cheers:")
+        print("“EXCELLENT! Finally, someone NORMAL in this house!”")
+        print("The magical world will never know you existed... Game over")
+        sys.exit()
 
 def meet_hagrid(character):
     pass
@@ -41,3 +54,4 @@ def start_chapter_1():
 if __name__ == "__main__":
     introduction()
     create_character()
+    receive_letter()
