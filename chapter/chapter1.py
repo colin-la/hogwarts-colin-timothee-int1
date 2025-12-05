@@ -5,18 +5,16 @@ from universe.character import *
 from utils.input_utils import *
 
 def introduction():
-    input("Welcome to you, stranger. You will live an amazing story \n \
-    Without further a do, let's get started ! \n \
-    Press Enter to continue ...")
+    input("Welcome to you, stranger. You will live an amazing story \nWithout further a do, let's get started ! \nPress Enter to continue ...")
 
 def create_character():
     last_name = ask_text("Enter your character's last name: ")
     first_name = ask_text("Enter your character's first name: ")
     print("Choose your attributes: ")
-    courage = ask_number("Courage level (1-10): ")
-    intelligence = ask_number("Intelligence level (1-10): ")
-    loyalty = ask_number("Loyalty level (1-10): ")
-    ambition = ask_number("Ambition level (1-10): ")
+    courage = ask_number("Courage level (1-10): ", 1, 10)
+    intelligence = ask_number("Intelligence level (1-10): ", 1, 10)
+    loyalty = ask_number("Loyalty level (1-10): ", 1, 10)
+    ambition = ask_number("Ambition level (1-10): ", 1, 10)
     print(f"Character profile: \n \
         Last name: {last_name} \n \
         First name: {first_name} \n \
