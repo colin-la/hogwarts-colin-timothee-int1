@@ -10,7 +10,7 @@ def create_character():
 def receive_letter():
     pass
 
-def meet_hagrid(character):
+def meet_hagrid(character: dict):
     choice = ask_choice("Hagrid: 'Hello {}! I’m here to help you with your shopping on Diagon Alley.\n\n\
           Do you want to follow Hagrid?".format(character['First Name']), [1, 2])
     if choice == 2:
@@ -18,8 +18,29 @@ def meet_hagrid(character):
     else:
         print("You follow Hagrid to Diagon Alley!")
 
-def buy_supplies(character):
-    pass
+def buy_supplies(character: dict):
+    print("Welcome to Diagon Alley!\n\nCatalog of available items:")
+    dict_items = load_file("../data/inventory.json")
+    # display item list
+    for key, value in dict_items.items():
+        if dict_items[key][0] in ["Magic Wand", "Wizard Robe", "Potions Book"]:
+            message = " (required)"
+        else:
+            message = ""
+        print("{}. {} - {} Galleons".format(key, dict_items[key][0], dict_items[key][1]) + message)
+
+    required = ["Magic Wand", "Wizard Robe", "Potions Book"]
+    while len(required) > 0:
+        print("You have", character["Money"], "Galleons.")
+        print("Remaining required items: ", end="")
+        for element in required:
+            if element == required[-1]:
+                endd = ""
+            else:
+                endd = ","
+            print(element, end=endd)
+        choice = ask_number("Enter the number of the item to buy: ", 1, 8)
+        if character["Money"] < dict_items[choice][1]
 
 def start_chapter_1():
     pass
