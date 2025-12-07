@@ -106,8 +106,13 @@ def buy_supplies(character: dict) -> None:
     print ("\nAll required items have been successfully purchased! Here is your final inventory:\n\nCharacter Profile")
     display_character(character)
 
-def start_ chapter1() -> dict
-    pass
+def start_ chapter1() -> dict:
+'''    introduction()
+    create_character()
+    receive_letter()
+    meet_hagrid(character)
+    buy_supplies(character)
+'''
 
 #################
 ##### Tests #####
