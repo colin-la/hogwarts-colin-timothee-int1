@@ -13,15 +13,18 @@ def ask_text(message: str) -> str:
 
 def ask_number(message: str, min_val=None, max_val=None) -> int:
     """
-    number = ask_number("le message en question", 1, 10)
+    renvoie le nombre entré par l'utilisateur 
+    Si l'utilisateur n'entre pas un integer ou entre un integer
+    en dehors des limites, la fonction re-demande d'entrer un nombre
     """
-    anwser = min_val - 1
-    while not (min_val <= anwser <= max_val):
-        try:
-            anwser = int(input((message)))
-        except:
-            anwser = min_val - 1
-
+    try:
+        anwser = int(input((message)))
+    except ValueError:
+        return ask_number(message, min_val, max_val)
+    else :
+        if (isinstance(min_val, int) and anwser < min_val) or (isinstance(max_val, int) and anwser > max_val):
+            return ask_number(message, min_val, max_val)
+        return anwser
 
 def ask_choice(message: str, options: list) -> int:
     """
@@ -30,7 +33,7 @@ def ask_choice(message: str, options: list) -> int:
     print(message)
     for x in range(len(options)):
         print(f"{x+1}. {options[x]}")
-    result = ask_number(message, 1, len(options))
+    result = ask_number("Your choice: ", 1, len(options))
     return result
 
 
