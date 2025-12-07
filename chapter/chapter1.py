@@ -42,7 +42,7 @@ def receive_letter():
         print("The magical world will never know you existed... Game over")
         sys.exit()
 
-def meet_hagrid(character: dict):
+def meet_hagrid(character: dict) -> None:
     choice = ask_choice("Hagrid: 'Hello {}! I’m here to help you with your shopping on Diagon Alley.\n\n\
           Do you want to follow Hagrid?".format(character['First Name']), [1, 2])
     if choice == 2:
@@ -50,7 +50,7 @@ def meet_hagrid(character: dict):
     else:
         print("You follow Hagrid to Diagon Alley!")
 
-def buy_supplies(character: dict):
+def buy_supplies(character: dict) -> None:
     print("Welcome to Diagon Alley!\n\nCatalog of available items:")
     dict_items = load_file("../data/inventory.json")
     # display item list
@@ -61,6 +61,7 @@ def buy_supplies(character: dict):
             message = ""
         print("{}. {} - {} Galleons".format(key, dict_items[key][0], dict_items[key][1]) + message)
 
+    # buying required items loop
     required = ["Magic Wand", "Wizard Robe", "Potions Book"]
     while len(required) > 0:
         print("You have", character["Money"], "Galleons.")
@@ -75,11 +76,37 @@ def buy_supplies(character: dict):
         if character["Money"] < dict_items[str(choice)][1]:
             print("\n\n\nYou didn't have enough money to pay and the merchant killed you.")
             print("GAME OVER")
-        else:
-            character["Money"] -= dict_items[str(choice)][1]
-            required.remove(dict_items[str(choice)][0])
+            return
+        # else
+        modify_money(character, -1 * dict_items[str(choice)][1])
+        required.remove(dict_items[str(choice)][0])
+        print("You bought: {} (-{} Galleons)".format(dict_items[str(choice)][0], dict_items[str(choice)][1]))
+        print()
+        add_item(character, "Inventory", dict_items[str(choice)][0])
+    print("All required items have been purchased!\n")
 
-def start_chapter_1():
+    # display pet list
+    print("It's time to choose your Hogwarts pet!\n")
+    print("You have", character["Money"], "Galleons.\n")
+    dict_pet = {
+    "1": ["Owl", 20],
+    "2": ["Cat",  15],
+    "3": ["Rat", 10],
+    "4": ["Toad", 5],
+}
+    # buying the pet
+    for key, value in dict_pet.items():
+        print("{}. {} - {} Galleons".format(key, dict_pet[key][0], dict_pet[key][1]))
+    choice = ask_choice('Which pet do you want?', ["Owl", "Cat", "Rat", "Toad"])
+    print("You chose: {} (-{} Galleons)".format(dict_pet[str(choice)][0], dict_pet[str(choice)][1]))
+    modify_money(character, -1 * dict_pet[str(choice)][1])
+    add_item(character, "Inventory", dict_pet[str(choice)][0])
+
+    # final display of inventory
+    print ("\nAll required items have been successfully purchased! Here is your final inventory:\n\nCharacter Profile")
+    display_character(character)
+
+def start_ chapter1() -> dict
     pass
 
 #################
