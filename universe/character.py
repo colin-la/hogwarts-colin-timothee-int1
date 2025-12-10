@@ -1,6 +1,6 @@
 def init_character(last_name: str, first_name: str, attributes: dict) -> dict:
     """
-    function returning a dictionary of a new character using his last name, first name and a dictionary of attributes
+    function returning a dictionary of a new character using his last name, first name and a dictionary of attributes ({"Courage": 4})
     """
     dico = {}
     dico["Last Name"] = last_name

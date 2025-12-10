@@ -29,6 +29,7 @@ def ask_number(message: str, min_val=None, max_val=None) -> int:
 def ask_choice(message: str, options: list) -> int:
     """
     choix = ask_choice("le message en question", ["oui", "non", "jsp"])
+    choix takes 1, 2 or 3
     """
     print(message)
     for x in range(len(options)):
