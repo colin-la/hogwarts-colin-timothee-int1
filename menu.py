@@ -4,7 +4,7 @@ from chapter.chapter1 import *
 def display_main_menu() -> int:
     return ask_choice("", ["Start Chapter 1 – Arrival in the magical world.", "Exit the game."])
 
-def launch_menu_choice():
+def launch_menu_choice() -> None:
     houses = {}
     while True :
         choice = display_main_menu()
