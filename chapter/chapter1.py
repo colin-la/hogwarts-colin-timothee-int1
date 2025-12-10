@@ -15,16 +15,9 @@ def create_character():
     intelligence = ask_number("Intelligence level (1-10): ", 1, 10)
     loyalty = ask_number("Loyalty level (1-10): ", 1, 10)
     ambition = ask_number("Ambition level (1-10): ", 1, 10)
-    print(f"Character profile: \n \
-        Last name: {last_name} \n \
-        First name: {first_name} \n \
-        Money: 100 \n \
-        Inventory: \n \
-        Spells: \n \
-        Attributes: \n \
-        \t - Courage: {courage} \n \
-        \t - Intelligence {intelligence}")
-
+    dico = init_character(last_name, first_name, {courage, intelligence, loyalty, ambition})
+    display_character(dico)
+    
 
 def receive_letter():
     print("An owl flies through the window, delivering a letter sealed with the Hogwarts crest...")
@@ -105,9 +98,9 @@ def buy_supplies(character: dict) -> None:
     # final display of inventory
     print ("\nAll required items have been successfully purchased! Here is your final inventory:\n\nCharacter Profile")
     display_character(character)
-
-def start_ chapter1() -> dict:
-'''    introduction()
+'''
+def start_chapter1() -> dict:
+    introduction()
     create_character()
     receive_letter()
     meet_hagrid(character)
@@ -125,3 +118,4 @@ if __name__ == "__main__":
     introduction()
     create_character()
     receive_letter()
+    create_character2()
