@@ -29,7 +29,7 @@ def display_character(character: dict) -> None:
             current_list = character[key]
             for i in range(len(current_list)):
                 current_list[i] = str(current_list[i])
-            print("".join(current_list))
+            print(" ".join(current_list))
         else:
             print(character[key])
 
