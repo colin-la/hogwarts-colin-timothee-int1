@@ -17,6 +17,7 @@ def create_character():
     ambition = ask_number("Ambition level (1-10): ", 1, 10)
     dico = init_character(last_name, first_name, {"Courage": courage, "Intelligence": intelligence, "Loyalty":loyalty, "Ambition": ambition})
     display_character(dico)
+    return dico
     
 
 def receive_letter():
@@ -26,7 +27,7 @@ def receive_letter():
     print("School of Witchcraft and Wizardry!”\n")
     choice = ask_choice("Do you accept this invitation and go to Hogwarts?\n", ["Yes, of course!", "No, I'd rather stay with Uncle Vernon..."])
     if choice == 1:
-        print("Thank you, we'll be waiting you on the platform 9 and 3/4")
+        print("Thank you, we'll be waiting for you on the platform 9 and 3/4")
         print("in order to take the Hogwarts Express")
 
     if choice == 2:
@@ -37,7 +38,7 @@ def receive_letter():
 
 def meet_hagrid(character: dict) -> None:
     choice = ask_choice("Hagrid: 'Hello {}! I’m here to help you with your shopping on Diagon Alley.\n\n\
-          Do you want to follow Hagrid?".format(character['First Name']), [1, 2])
+          Do you want to follow Hagrid?".format(character['First Name']), ["Yes", "No"])
     if choice == 2:
         print("Hagrid gently insists and takes you along anyway!")
     else:
@@ -58,21 +59,23 @@ def buy_supplies(character: dict) -> None:
     required = ["Magic Wand", "Wizard Robe", "Potions Book"]
     while len(required) > 0:
         print("You have", character["Money"], "Galleons.")
-        print("Remaining required items: ", end="")
+        print("Remaining required items: ", end= " ")
         for element in required:
             if element == required[-1]:
                 endd = ""
             else:
                 endd = ","
             print(element, end=endd)
+        print()
         choice = ask_number("Enter the number of the item to buy: ", 1, 8)
         if character["Money"] < dict_items[str(choice)][1]:
             print("\n\n\nYou didn't have enough money to pay and the merchant killed you.")
             print("GAME OVER")
-            return
+            sys.exit()
         # else
         modify_money(character, -1 * dict_items[str(choice)][1])
-        required.remove(dict_items[str(choice)][0])
+        if dict_items[str(choice)][0] in required:
+            required.remove(dict_items[str(choice)][0])
         print("You bought: {} (-{} Galleons)".format(dict_items[str(choice)][0], dict_items[str(choice)][1]))
         print()
         add_item(character, "Inventory", dict_items[str(choice)][0])
@@ -80,6 +83,7 @@ def buy_supplies(character: dict) -> None:
 
     # display pet list
     print("It's time to choose your Hogwarts pet!\n")
+    input("\nPlease presse enter to continue...\n")
     print("You have", character["Money"], "Galleons.\n")
     dict_pet = {
     "1": ["Owl", 20],
@@ -91,9 +95,14 @@ def buy_supplies(character: dict) -> None:
     for key, value in dict_pet.items():
         print("{}. {} - {} Galleons".format(key, dict_pet[key][0], dict_pet[key][1]))
     choice = ask_choice('Which pet do you want?', ["Owl", "Cat", "Rat", "Toad"])
-    print("You chose: {} (-{} Galleons)".format(dict_pet[str(choice)][0], dict_pet[str(choice)][1]))
+    if character["Money"] < dict_pet[str(choice)][1]:
+        print("\n\n\nYou didn't have enough money to pay and the merchant killed you.")
+        print("GAME OVER")
+        sys.exit()
     modify_money(character, -1 * dict_pet[str(choice)][1])
     add_item(character, "Inventory", dict_pet[str(choice)][0])
+    print("You chose: {} (-{} Galleons)".format(dict_pet[str(choice)][0], dict_pet[str(choice)][1]))
+
 
     # final display of inventory
     print ("\nAll required items have been successfully purchased! Here is your final inventory:\n\nCharacter Profile")
@@ -102,10 +111,13 @@ def buy_supplies(character: dict) -> None:
 def start_chapter1() -> dict:
     introduction()
     character = create_character()
+    input("\nPlease presse enter to continue...")
     receive_letter()
     meet_hagrid(character)
+    input("\nPlease presse enter to continue...")
     buy_supplies(character)
     print("End of Chapter 1! Your adventure begins at Hogwarts...")
+    input("\nPlease presse enter to continue...")
     return character
 
 
@@ -117,6 +129,4 @@ Harry = init_character("Potter", "Harry", {"Courage": 8, "Intelligence": 8, "Loy
 meet_hagrid(Harry)
 '''
 if __name__ == "__main__":
-    introduction()
-    create_character()
-    receive_letter()
+    start_chapter1()
