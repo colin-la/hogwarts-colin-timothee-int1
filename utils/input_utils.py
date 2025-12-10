@@ -37,9 +37,11 @@ def ask_choice(message: str, options: list) -> int:
     return result
 
 
-def load_file (file_path: str):
+def load_file (file_path: str) -> dict:
     """
-    data = load_file("le/chemin/du/fichier.json")
+    input: file_path
+    output: dictionnaire de toute les maisons
+    utilisation dictionnaire = load_file("le/chemin/du/fichier.json")
     """
     with open(file_path, "r", encoding="utf-8") as json_file:
         return json.load(json_file)
