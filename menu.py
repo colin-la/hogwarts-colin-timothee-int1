@@ -6,8 +6,10 @@ from time import sleep
 def display_main_menu() -> int:
     return ask_choice("", ["Start Chapter 1 – Arrival in the magical world.", "Exit the game."])
 
-def launch_menu_choice() -> None:
+def launch_menu_choice() -> dict:
     houses = {}
+    for key in load_file("data/houses.json").keys():
+        houses[key] = 0
     choice = display_main_menu()
     if choice == 1:
         dico = start_chapter1()
@@ -18,6 +20,7 @@ def launch_menu_choice() -> None:
         print("Too bad... \nGoodbye and see you next time !")
         sleep(2)
         sys.exit()
+    return houses
 
 if __name__ == "__main__":
     launch_menu_choice()
