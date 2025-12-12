@@ -1,7 +1,5 @@
-
-
-
-
+import sys
+from menu import *
 
 if __name__ == "__main__":
-    print(f"launch from {__file__}")
+    launch_menu_choice()

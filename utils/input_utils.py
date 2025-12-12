@@ -20,9 +20,11 @@ def ask_number(message: str, min_val=None, max_val=None) -> int:
     try:
         anwser = int(input((message)))
     except ValueError:
+        print("Error, please enter a numerical value.")
         return ask_number(message, min_val, max_val)
     else :
         if (isinstance(min_val, int) and anwser < min_val) or (isinstance(max_val, int) and anwser > max_val):
+            print("Error, the number isn't in the available choices.")
             return ask_number(message, min_val, max_val)
         return anwser
 

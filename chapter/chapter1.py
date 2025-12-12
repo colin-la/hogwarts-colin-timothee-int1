@@ -124,9 +124,6 @@ def start_chapter1() -> dict:
 #################
 ##### Tests #####
 #################
-'''
-Harry = init_character("Potter", "Harry", {"Courage": 8, "Intelligence": 8, "Loyalty": 8, "Ambition": 8})
-meet_hagrid(Harry)
-'''
+
 if __name__ == "__main__":
     start_chapter1()

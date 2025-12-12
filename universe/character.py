@@ -49,20 +49,19 @@ def add_item(character: dict, key: str, item: str) -> None:
 ##### Tests #####
 #################
 
-'''
-Harry = init_character("Potter", "Harry", {"Courage": 8, "Intelligence": 8, "Loyalty": 8, "Ambition": 8})
-print('\n\n\n INIT TESTS RUN SUCCESSFULLY\n\n')
-display_character(Harry)
-print('\n\n\n DISPLAY TESTS RUN SUCCESSFULLY\n\n')
+if __name__ == '__main__':
+    Harry = init_character("Potter", "Harry", {"Courage": 8, "Intelligence": 8, "Loyalty": 8, "Ambition": 8})
+    print('\n\n\n INIT TESTS RUN SUCCESSFULLY\n\n')
+    display_character(Harry)
+    print('\n\n\n DISPLAY TESTS RUN SUCCESSFULLY\n\n')
 
-try:
-    add_item(Harry, "Money", "10")
-    raise 'add_item should make an error with the wrong key'
-except TypeError:
-    print("\n\n\nADD_ITEM VALUE TEST RUN SUCCESSFULLY\n\n")
+    try:
+        add_item(Harry, "Money", "10")
+        raise 'add_item should make an error with the wrong key'
+    except TypeError:
+        print("\n\n\nADD_ITEM VALUE TEST RUN SUCCESSFULLY\n\n")
 
-modify_money(Harry, 10)
-add_item(Harry, "Spells", "tortion_testicular")
-display_character(Harry)
-print('\n\n\n ADD_ITEM AND MONEY TESTS RUN SUCCESSFULLY\n\n')
-'''
+    modify_money(Harry, 10)
+    add_item(Harry, "Spells", "tortion_testicular")
+    display_character(Harry)
+    print('\n\n\n ADD_ITEM AND MONEY TESTS RUN SUCCESSFULLY\n\n')

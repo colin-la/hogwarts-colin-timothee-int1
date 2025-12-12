@@ -1,6 +1,8 @@
 import sys
 from utils.input_utils import *
 from chapter.chapter1 import *
+from time import sleep
+
 def display_main_menu() -> int:
     return ask_choice("", ["Start Chapter 1 – Arrival in the magical world.", "Exit the game."])
 
@@ -14,6 +16,7 @@ def launch_menu_choice() -> None:
         # start_chapter4()
     elif choice == 2:
         print("Too bad... \nGoodbye and see you next time !")
+        sleep(2)
         sys.exit()
 
 if __name__ == "__main__":

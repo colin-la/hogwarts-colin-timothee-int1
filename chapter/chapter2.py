@@ -1,5 +1,6 @@
 from utils.input_utils import *
 from universe.house import *
+from universe.character import *
 
 def meet_friends(character: dict) -> None:
     """
