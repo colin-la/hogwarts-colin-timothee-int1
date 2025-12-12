@@ -1,3 +1,5 @@
+import sys
+sys.path.append('../utils')
 from utils.input_utils import *
 from universe.house import *
 from universe.character import *
@@ -106,8 +108,9 @@ def start_chapter_2(character) -> int:
 
 if __name__ == "__main__":
     print(f"launch from {__file__}")
-    meet_friends()
+    character = {"Intelligence": 24}
+    meet_friends(character)
     welcome_message()
-    sorting_ceremony()
-    enter_common_room()
-    start_chapter_2()
+    sorting_ceremony(character)
+    enter_common_room(character)
+    start_chapter_2(character)
