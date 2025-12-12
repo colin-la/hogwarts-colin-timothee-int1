@@ -4,7 +4,7 @@ from universe.house import *
 from utils.input_utils import *
 from universe.character import *
 
-def learn_spells(character: dict, file_path="../data/spells.json"):
+def learn_spells(character: dict, file_path="../data/spells.json") -> None:
     print("You begin your magic lessons at Hogwarts...")
     list_of_spells = load_file(file_path)
     quota = {"Offensive": 1, "Defensive": 1, "Utility": 3}
