@@ -80,6 +80,7 @@ def sorting_ceremony(character) -> int:
     house = character["House"]
     print(f"The Sorting Hat exclaims: {house}!!!")
     print(f"You join the {house} students to loud cheers!")
+    return character["House"]
     
 def enter_common_room(character) -> None: 
     print("You follow the prefects through the castle corridors...")
@@ -98,6 +99,7 @@ def start_chapter_2(character) -> int:
     display_character()
     print("This is the end of chapter 2.")
     print("Now, get your pens out and let's start classes !")
+
 
 
 
