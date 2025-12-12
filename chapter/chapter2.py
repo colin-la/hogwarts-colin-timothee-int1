@@ -1,3 +1,5 @@
+import sys
+sys.path.append('../')
 from utils.input_utils import *
 from universe.house import *
 from universe.character import *
@@ -48,7 +50,7 @@ def meet_friends(character: dict) -> None:
     print("The train continues its journey. Hogwarts Castle appears on the horizon...")
     print("Your choices already say a lot about your personality!")
     print("Your updated attributes: ", end="")
-    display_character()
+    display_character(character)
 
 def welcome_message() -> None:
     print("An old man approch you.")
@@ -76,7 +78,7 @@ def sorting_ceremony(character) -> int:
                 ]
     print("The sorting ceremony begins in the Great Hall...")
     print("The Sorting Hat observes you for a long time before asking its questions:")
-    character["House"] = assign_house(character, question)
+    character["House"] = assign_house(character, questions)
     house = character["House"]
     print(f"The Sorting Hat exclaims: {house}!!!")
     print(f"You join the {house} students to loud cheers!")
@@ -106,8 +108,9 @@ def start_chapter_2(character) -> int:
 
 if __name__ == "__main__":
     print(f"launch from {__file__}")
-    meet_friends()
+    character = {"Intelligence": 10, "Ambition":10, "Courage": 10, "Loyalty":10}
+    meet_friends(character)
     welcome_message()
-    sorting_ceremony()
-    enter_common_room()
-    start_chapter_2()
+    sorting_ceremony(character)
+    enter_common_room(character)
+    start_chapter_2(character)
