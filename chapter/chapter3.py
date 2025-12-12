@@ -1,4 +1,6 @@
 from random import randint
+
+from universe.house import *
 from utils.input_utils import *
 from universe.character import *
 
@@ -48,6 +50,12 @@ def magic_quiz(character, file_path="../data/magic_quiz.json") -> int:
     print("Score obtained:", score, "points")
     return score
 
+
+def start_chapter3(character, houses):
+    learn_spells(character)
+    update_house_points(houses, character['Attributes']['house'], magic_quiz(character))
+    display_winning_house(houses)
+    display_character(character)
 
 
 
