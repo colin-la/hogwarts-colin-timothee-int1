@@ -40,7 +40,7 @@ def ask_choice(message: str, options: list) -> int:
     return result
 
 
-def load_file (file_path: str) -> dict:
+def load_file(file_path: str) -> dict:
     """
     input: file_path
     output: dictionnaire de toute les maisons
