@@ -52,7 +52,6 @@ def assign_house(character: dict, questions: list) -> str:
         dico[name] += value * 2
 
     for question, answer_list, house_list in questions:
-        print(question)
         choice = ask_choice(question, answer_list)
         dico[house_list[choice-1]] += 3
         print()
