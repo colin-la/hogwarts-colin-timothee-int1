@@ -103,6 +103,7 @@ def start_chapter_2(character) -> int:
     display_character(character)
     print("This is the end of chapter 2.")
     print("Now, get your pens out and let's start classes !")
+    
 
 
 
