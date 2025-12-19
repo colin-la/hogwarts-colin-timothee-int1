@@ -46,7 +46,7 @@ def meet_hagrid(character: dict) -> None:
 
 def buy_supplies(character: dict) -> None:
     print("Welcome to Diagon Alley!\n\nCatalog of available items:")
-    dict_items = load_file("../data/inventory.json")
+    dict_items = load_file("data/inventory.json")
     # display item list
     for key, value in dict_items.items():
         if dict_items[key][0] in ["Magic Wand", "Wizard Robe", "Potions Book"]:
@@ -108,7 +108,7 @@ def buy_supplies(character: dict) -> None:
     print ("\nAll required items have been successfully purchased! Here is your final inventory:\n\nCharacter Profile")
     display_character(character)
 
-def start_chapter1() -> dict:
+def start_chapter_1() -> dict:
     introduction()
     character = create_character()
     input("\nPlease presse enter to continue...")
@@ -126,4 +126,4 @@ def start_chapter1() -> dict:
 #################
 
 if __name__ == "__main__":
-    start_chapter1()
+    start_chapter_1()

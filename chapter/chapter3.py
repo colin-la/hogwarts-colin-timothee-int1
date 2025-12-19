@@ -51,7 +51,7 @@ def magic_quiz(character, file_path="../data/magic_quiz.json") -> int:
     return score
 
 
-def start_chapter3(character, houses):
+def start_chapter_3(character, houses):
     learn_spells(character)
     input("\nPlease press enter to continue...")
     update_house_points(houses, character['Attributes']['house'], magic_quiz(character))
