@@ -39,7 +39,7 @@ def assign_house(character: dict, questions: list) -> str:
     parameter: questions is a list of tuples containing: (1) the question text, (2) a list of possible choices(str), and (3) the corresponding houses for each answer. check page 14 of the pdf for an example.
     returns a house depending on the answers to the questions given
     '''
-    dico = {"Gryffindor": 0, "Slytherin": 0, "Hufflepuff": 0, "Revenclaw": 0}
+    dico = {"Gryffindor": 0, "Slytherin": 0, "Hufflepuff": 0, "Ravenclaw": 0}
     for attribute, value in character["Attributes"].items():
         if attribute == 'Courage':
             name = "Gryffindor"
@@ -48,7 +48,7 @@ def assign_house(character: dict, questions: list) -> str:
         elif attribute == "Loyalty":
             name = "Hufflepuff"
         else:
-            name = "Revenclaw"
+            name = "Ravenclaw"
         dico[name] += value * 2
 
     for question, answer_list, house_list in questions:

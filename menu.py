@@ -9,13 +9,18 @@ def display_main_menu() -> int:
     return ask_choice("", ["Start Chapter 1 – Arrival in the magical world.", "Exit the game."])
 
 def launch_menu_choice() -> None:
-    houses = {}
+    houses =  {
+ "Gryffindor": 0,
+ "Slytherin": 0,
+ "Hufflepuff": 0,
+ "Ravenclaw": 0
+}
     for key in load_file("data/houses.json").keys():
         houses[key] = 0
     choice = display_main_menu()
     if choice == 1:
         character = start_chapter_1()
-        houses = start_chapter_2(character)
+        start_chapter_2(character)
         start_chapter_3(character, houses)
         # start_chapter4()
     elif choice == 2:
