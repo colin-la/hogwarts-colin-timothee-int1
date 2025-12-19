@@ -94,7 +94,7 @@ def enter_common_room(character) -> None:
     for x in info_house["colors"]:
         print(x, end=" ")
     
-def start_chapter_2(character) -> dict:
+def start_chapter_2(character) -> None:
     meet_friends(character)
     welcome_message()
     sorting_ceremony(character)
