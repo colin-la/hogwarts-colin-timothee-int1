@@ -40,7 +40,7 @@ def assign_house(character: dict, questions: list) -> str:
     returns a house depending on the answers to the questions given
     '''
     dico = {"Gryffindor": 0, "Slytherin": 0, "Hufflepuff": 0, "Revenclaw": 0}
-    for attribute, value in character["Attributes"].items:
+    for attribute, value in character["Attributes"].items():
         if attribute == 'Courage':
             name = "Gryffindor"
         elif attribute == 'Ambition':
@@ -52,7 +52,6 @@ def assign_house(character: dict, questions: list) -> str:
         dico[name] += value * 2
 
     for question, answer_list, house_list in questions:
-        print(question)
         choice = ask_choice(question, answer_list)
         dico[house_list[choice-1]] += 3
         print()
