@@ -87,14 +87,14 @@ def sorting_ceremony(character) -> int:
     
 def enter_common_room(character) -> None: 
     print("You follow the prefects through the castle corridors...")
-    info_house = load_file("../data/houses.json")[character["House"]]
+    info_house = load_file("data/houses.json")[character["House"]]
     print(info_house["description"])
     print(info_house["installation_message"])
     print("Your house colors:", end="")
     for x in info_house["colors"]:
         print(x, end=" ")
     
-def start_chapter_2(character) -> int:
+def start_chapter_2(character) -> None:
     meet_friends(character)
     welcome_message()
     sorting_ceremony(character)

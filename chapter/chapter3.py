@@ -4,7 +4,7 @@ from universe.house import *
 from utils.input_utils import *
 from universe.character import *
 
-def learn_spells(character: dict, file_path="../data/spells.json") -> None:
+def learn_spells(character: dict, file_path="data/spells.json") -> None:
     print("You begin your magic lessons at Hogwarts...")
     list_of_spells = load_file(file_path)
     quota = {"Offensive": 1, "Defensive": 1, "Utility": 3}
@@ -28,7 +28,7 @@ def learn_spells(character: dict, file_path="../data/spells.json") -> None:
         print("- {} ({}): {}".format(spell, spell_type, spell_description))
 
 
-def magic_quiz(character, file_path="../data/magic_quiz.json") -> int:
+def magic_quiz(character, file_path="data/magic_quiz.json") -> int:
     """
     plays the scenario of the magic quiz and returns the amount of points scored
     """
@@ -54,7 +54,7 @@ def magic_quiz(character, file_path="../data/magic_quiz.json") -> int:
 def start_chapter_3(character, houses):
     learn_spells(character)
     input("\nPlease press enter to continue...")
-    update_house_points(houses, character['Attributes']['house'], magic_quiz(character))
+    update_house_points(houses, character['House'], magic_quiz(character))
     display_winning_house(houses)
     input("\nPlease press enter to continue...")
     display_character(character)
