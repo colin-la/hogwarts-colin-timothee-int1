@@ -57,7 +57,6 @@ def welcome_message() -> None:
     print("An old man approch you.")
     print("Pr. Dumbledore: — Hi ! I'm Professor Dumbledore and i will be your main teacher")
     print("Pr. Dumbledore: — If you have any question, don't be afraid to ask me")
-    input("Press Enter to continue ...")
 
 def sorting_ceremony(character) -> int:
     questions = [
@@ -97,9 +96,11 @@ def enter_common_room(character) -> None:
 def start_chapter_2(character) -> None:
     meet_friends(character)
     welcome_message()
+    input("\nPress Enter to continue ...")
     sorting_ceremony(character)
-    # installation_message(character)
+    input("\nPress Enter to continue ...")
     enter_common_room(character)
+    input("\nPress Enter to continue ...")
     display_character(character)
     print("This is the end of chapter 2.")
     print("Now, get your pens out and let's start classes !")
