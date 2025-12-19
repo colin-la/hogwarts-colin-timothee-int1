@@ -33,7 +33,8 @@ def attempt_goal(attacking_team, defending_team, player_is_seeker=False) -> None
         defending_team["goals_blocked"] += 1
         print(f"The attack wasn't strong enough ! {defending_team["name"]} blocked the attack!")
 
-
+def golden_snitch_appears() -> bool:
+    return randint(1, 6) == 6
 
 
 """
