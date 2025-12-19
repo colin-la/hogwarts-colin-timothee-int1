@@ -36,6 +36,22 @@ def attempt_goal(attacking_team, defending_team, player_is_seeker=False) -> None
 def golden_snitch_appears() -> bool:
     return randint(1, 6) == 6
 
+def catch_golden_snitch(e1, e2):
+    pass
+
+def display_score(e1, e2):
+    pass
+
+def display_team(house, team):
+    pass
+
+def quidditch_match(character, houses):
+    pass
+
+def start_chapter_4_quidditch(character, houses):
+    pass
+
+
 
 """
 team = {
