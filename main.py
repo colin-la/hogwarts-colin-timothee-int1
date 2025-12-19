@@ -1,4 +1,3 @@
-import sys
 from menu import *
 
 if __name__ == "__main__":
