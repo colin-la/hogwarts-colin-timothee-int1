@@ -16,21 +16,22 @@ def meet_friends(character: dict) -> None:
     print("A red-haired boy enters your compartment, looking friendly.")
     print("— Hi! I'm Ron Weasley. Mind if I sit with you?")
     choice = ask_choice("How do you respond?", ["Sure, have a seat", "Sorry, I prefer to travel alone."])    
+    attributes = character["Attributes"]
     if choice == 1:
-        character["Loyalty"] += 1
+        attributes["Loyalty"] += 1
         print("Ron smiles: — Awesome! You'll see, Hogwarts is amazing!")
     else :
-        character["Ambition"] += 1
+        attributes["Ambition"] += 1
         print("Ron just ignore you")
     # Hermione Granger
     print("A girl enters next, already carrying a stack of books.")
     print("— Hello, I'm Hermione Granger. Have you ever read 'A History of Magic'?")
     choice = ask_choice("How do you respond?", ["Yes, I love learning new things!", "Uh… no, I prefer adventures over books."])
     if choice == 1:
-        character["Intelligence"] += 1
+        attributes["Intelligence"] += 1
         print("Hermione smiles, impressed: — Oh, that's rare! You must be very clever!")
     else :
-        character["Courage"] += 1
+        attributes["Courage"] += 1
         print("Hermione: — No problem, i will read it alone")
     # Draco Malfoy
     print("Then a blonde boy enters, looking arrogant.")
@@ -38,13 +39,13 @@ def meet_friends(character: dict) -> None:
     print("start, don't you think")
     choice = ask_choice("How do you respond?", ["Shake his hand politely.", "Ignore him completely.", "Respond with arrogance."])
     if choice == 1:
-        character["Ambition"] += 1
+        attributes["Ambition"] += 1
         print("Draco smiles: — You will be my best friend from now on !")
     elif choice == 2:
-        character["Loyalty"] += 1
+        attributes["Loyalty"] += 1
         print("Draco frowns, annoyed. — You'll regret that!")
     else :
-        character["Courage"] += 1
+        attributes["Courage"] += 1
         print("You: — You should probably find better approch to make friends you looser")
     # End
     print("The train continues its journey. Hogwarts Castle appears on the horizon...")
@@ -86,19 +87,20 @@ def sorting_ceremony(character) -> int:
     
 def enter_common_room(character) -> None: 
     print("You follow the prefects through the castle corridors...")
-    info_house = load_file("../data/houses.json")[house]
+    info_house = load_file("../data/houses.json")[character["House"]]
     print(info_house["description"])
     print(info_house["installation_message"])
     print("Your house colors:", end="")
     for x in info_house["colors"]:
-        print(x, end="")
+        print(x, end=" ")
     
 def start_chapter_2(character) -> int:
     meet_friends(character)
-    welcome_message(character)
+    welcome_message()
     sorting_ceremony(character)
-    installation_message(character)
-    display_character()
+    # installation_message(character)
+    enter_common_room(character)
+    display_character(character)
     print("This is the end of chapter 2.")
     print("Now, get your pens out and let's start classes !")
 
@@ -108,9 +110,5 @@ def start_chapter_2(character) -> int:
 
 if __name__ == "__main__":
     print(f"launch from {__file__}")
-    character = {"Intelligence": 10, "Ambition":10, "Courage": 10, "Loyalty":10}
-    meet_friends(character)
-    welcome_message()
-    sorting_ceremony(character)
-    enter_common_room(character)
+    character = {"Attributes": {"Intelligence": 5, "Ambition": 2, "Loyalty":3, "Courage": 2}}
     start_chapter_2(character)
