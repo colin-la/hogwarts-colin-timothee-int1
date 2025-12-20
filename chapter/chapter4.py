@@ -1,18 +1,20 @@
 from random import randint, choice
 
 
-def create_team(house, team_data, is_player=False, player=None) -> dict:
+def create_team(house: str, team_data: dict, is_player=False, player=None) -> dict:
     result = {
         "name": house, "score": 0, 
         "goals_scored": 0, "goals_blocked": 0, 
-        "caught_snitch": False, "players": team_data
+        "caught_snitch": False, "players": []
         }
 
-    if player and len(team_data) != 0:
+    if is_player and len(team_data) != 0:
+        # Then go through the other players and add them to the list, avoiding duplicating the main player.
         new_list_players = [player + " (Seeker)"]
         for name_player in team_data:
             if name_player not in new_list_players:
                 new_list_players.append(name_player)
+        result["players"] = new_list_players
 
     return result
 
