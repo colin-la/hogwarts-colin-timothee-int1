@@ -41,11 +41,16 @@ def golden_snitch_appears() -> bool:
 def catch_golden_snitch(e1, e2):
     pass
 
-def display_score(e1, e2):
-    pass
+def display_score(e1: dict, e2: dict) -> None:
+    print("Current score:\n")
+    print("-> {}: {} points".format(e1['name'], e1['score'] + '\n'))
+    print("-> {}: {} points".format(e2['name'], e2['score']))
 
-def display_team(house, team):
-    pass
+
+def display_team(house: str, team: list) -> None:
+    print("{} team:\n".format(house))
+    for member in team:
+        print('-', member)
 
 def quidditch_match(character, houses):
     pass
