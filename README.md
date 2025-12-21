@@ -33,7 +33,9 @@ Win+R -> Type cmd -> Press Enter
 <details>
     <summary>Installation Command</summary>
 <p>
-cd %userprofile%/Documents && git init && git clone git@github.com:colin-la/hogwarts-colin-timothee-int1.git && rmdir /s /q .git
+
+    cd %userprofile%/Documents && git init && git clone git@github.com:colin-la/hogwarts-colin-timothee-int1.git && rmdir /s /q .git
+
 </p>
 </details>
 
@@ -45,7 +47,9 @@ cd %userprofile%/Documents && git init && git clone git@github.com:colin-la/hogw
 <details>
     <summary>Launch Command</summary>
 <p>
-cd %userprofile%/Documents/hogwarts-colin-timothee-int1 && python main.py
+
+    cd %userprofile%/Documents/hogwarts-colin-timothee-int1 && python main.py   
+
 </p>
 </details>
 
@@ -133,6 +137,7 @@ put "./" (no need to go up in the folder tree)
 > [house.py](https://github.com/colin-la/hogwarts-colin-timothee-int1/blob/main/universe/house.py "house.py")   
 > [character.py](https://github.com/colin-la/hogwarts-colin-timothee-int1/blob/main/universe/character.py "character.py")   
 > [main.py](https://github.com/colin-la/hogwarts-colin-timothee-int1/blob/main/main.py "main.py")   
+> [chapter1.py](https://github.com/colin-la/hogwarts-colin-timothee-int1/blob/main/chapter/chapter1.py "chapter1.py")   
 > [chapter3.py](https://github.com/colin-la/hogwarts-colin-timothee-int1/blob/main/chapter/chapter3.py "chapter3.py")
 
 # Control, Testing, and Validation
@@ -149,3 +154,15 @@ if __name__ == "__main__":
 
     If functions needed input from the user, we entered anything (numbers when we needed letters and vice-versa).
     No major bugs were seen. 
+
+
+## Problems remaining
+
+- Cannot launchs display_main_menu at the end of the game (idk why), which means that, when you loose or end the game, it exit the python script
+
+- Chapter 4 not finished 
+
+- We have to decide if we do an optionnal chapter
+
+
+
