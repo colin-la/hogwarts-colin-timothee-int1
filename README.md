@@ -47,7 +47,11 @@ cd %userprofile%/Documents/hogwarts-colin-timothee-int1 && python main.py
 </details>
 
 ### Key Features
-    List of key features
+
+- A story game where your choice really matters
+- Mini game to learn spells
+- Mini game to earn points for your house
+- And of course, much more ! 
 
 
 # Log Book
@@ -92,7 +96,6 @@ cd %userprofile%/Documents/hogwarts-colin-timothee-int1 && python main.py
 <details>
 <summary>12 December 2025</summary>
 <p>    
-- Finished Chapter3.py   <br>
 - Little fix on a while loop in main.py   <br>
 - Fixed a problem in the launch_menu() function that didn't return the dictionnary as expected.
 </p>
@@ -101,13 +104,14 @@ cd %userprofile%/Documents/hogwarts-colin-timothee-int1 && python main.py
 <details>
 <summary>19 December 2025</summary>
 <p>    
-- Finished Chapter2.py and Chapter3.py<br>   
+- Finished Chapter2.py <br>
+- Finished Chapter3.py<br>   
 - Test on all chapters: no bug !<br>
 - Init Chapter4.py (Quidditch match)<br>
 - Fix path problem due to "../data/" because if we 
 launchs from the main.py, we are not in the same 
 folder then, we needed to remove "../" and just
-put "./data" (no need to go up in the folder tree)
+put "./" (no need to go up in the folder tree)
 </p>
 </details>
 
