@@ -133,6 +133,7 @@ put "./" (no need to go up in the folder tree)
 > [house.py](https://github.com/colin-la/hogwarts-colin-timothee-int1/blob/main/universe/house.py "house.py")   
 > [character.py](https://github.com/colin-la/hogwarts-colin-timothee-int1/blob/main/universe/character.py "character.py")   
 > [main.py](https://github.com/colin-la/hogwarts-colin-timothee-int1/blob/main/main.py "main.py")   
+> [chapter1.py](https://github.com/colin-la/hogwarts-colin-timothee-int1/blob/main/chapter/chapter1.py "chapter1.py")   
 > [chapter3.py](https://github.com/colin-la/hogwarts-colin-timothee-int1/blob/main/chapter/chapter3.py "chapter3.py")
 
 # Control, Testing, and Validation
