@@ -100,7 +100,7 @@ def buy_supplies(character: dict) -> None:
         print("\n\n\nYou didn't have enough money to pay and the merchant killed you.")
         print("GAME OVER")
         sys.exit()
-        
+         
     modify_money(character, -1 * dict_pet[str(choice)][1])
     add_item(character, "Inventory", dict_pet[str(choice)][0])
     print("You chose: {} (-{} Galleons)".format(dict_pet[str(choice)][0], dict_pet[str(choice)][1]))
