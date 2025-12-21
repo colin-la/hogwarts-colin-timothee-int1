@@ -34,7 +34,6 @@ def receive_letter():
         print("You tear up the letter, and Uncle Vernon cheers:")
         print("“EXCELLENT! Finally, someone NORMAL in this house!”")
         print("The magical world will never know you existed... Game over")
-        sys.exit()
 
 def meet_hagrid(character: dict) -> None:
     choice = ask_choice("Hagrid: 'Hello {}! I’m here to help you with your shopping on Diagon Alley.\n\n\
@@ -71,7 +70,7 @@ def buy_supplies(character: dict) -> None:
         if character["Money"] < dict_items[str(choice)][1]:
             print("\n\n\nYou didn't have enough money to pay and the merchant killed you.")
             print("GAME OVER")
-            sys.exit()
+            
         # else
         modify_money(character, -1 * dict_items[str(choice)][1])
         if dict_items[str(choice)][0] in required:
@@ -98,7 +97,7 @@ def buy_supplies(character: dict) -> None:
     if character["Money"] < dict_pet[str(choice)][1]:
         print("\n\n\nYou didn't have enough money to pay and the merchant killed you.")
         print("GAME OVER")
-        sys.exit()
+        
     modify_money(character, -1 * dict_pet[str(choice)][1])
     add_item(character, "Inventory", dict_pet[str(choice)][0])
     print("You chose: {} (-{} Galleons)".format(dict_pet[str(choice)][0], dict_pet[str(choice)][1]))
