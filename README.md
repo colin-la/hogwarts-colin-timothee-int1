@@ -13,7 +13,9 @@
 
 ### Installation
 > [!WARNING]  
-> Before installing our game, you need to have python AND git installed on your machine.
+> Before installing our game, you need to have python AND git installed on your machine.   
+>   
+> If you install it on your own (without the command), be sure to launch the main.py in the hogwarts-colin-timothee-int1 folder (due to error with relative file path with "../")
 
 > [!TIP]   
 > Here is the link to the [Python Website](https://www.python.org/downloads/ "https://www.python.org/downloads/")    
