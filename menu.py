@@ -17,17 +17,17 @@ def launch_menu_choice() -> None:
 }
     for key in load_file("./data/houses.json").keys():
         houses[key] = 0
-    while True:
-        choice = display_main_menu()
-        if choice == 1:
-            character = start_chapter_1()
-            start_chapter_2(character)
-            start_chapter_3(character, houses)
-            # start_chapter4()
-        elif choice == 2:
-            print("Too bad... \nGoodbye and see you next time !")
-            sleep(2)
-            return None
+    choice = display_main_menu()
+    if choice == 1:
+        character = start_chapter_1()
+        start_chapter_2(character)
+        start_chapter_3(character, houses)
+        # start_chapter4()
+    elif choice == 2:
+        print("Too bad... \nGoodbye and see you next time !")
+        sleep(2)
+        sys.exit()
+    return
 
 if __name__ == "__main__":
     launch_menu_choice()
