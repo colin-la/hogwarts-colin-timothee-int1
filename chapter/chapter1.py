@@ -83,7 +83,7 @@ def buy_supplies(character: dict) -> None:
 
     # display pet list
     print("It's time to choose your Hogwarts pet!\n")
-    input("\nPlease presse enter to continue...\n")
+    input("\nPlease press enter to continue...\n")
     print("You have", character["Money"], "Galleons.\n")
     dict_pet = {
     "1": ["Owl", 20],
@@ -111,13 +111,13 @@ def buy_supplies(character: dict) -> None:
 def start_chapter_1() -> dict:
     introduction()
     character = create_character()
-    input("\nPlease presse enter to continue...")
+    input("\nPlease press enter to continue...")
     receive_letter()
     meet_hagrid(character)
-    input("\nPlease presse enter to continue...")
+    input("\nPlease press enter to continue...")
     buy_supplies(character)
     print("End of Chapter 1! Your adventure begins at Hogwarts...")
-    input("\nPlease presse enter to continue...")
+    input("\nPlease press enter to continue...")
     return character
 
 
