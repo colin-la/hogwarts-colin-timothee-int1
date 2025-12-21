@@ -42,7 +42,7 @@ cd %userprofile%/Documents && git init && git clone git@github.com:colin-la/hogw
 <details>
     <summary>Launch Command</summary>
 <p>
-python %userprofile%/Documents/hogwarts-colin-timothee-int1/main.py
+cd %userprofile%/Documents/hogwarts-colin-timothee-int1 && python main.py
 </p>
 </details>
 
