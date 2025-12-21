@@ -34,7 +34,7 @@ Win+R -> Type cmd -> Press Enter
     <summary>Installation Command</summary>
 <p>
 
-    cd %userprofile%/Documents && git init && git clone git@github.com:colin-la/hogwarts-colin-timothee-int1.git && rmdir /s /q .git
+    cd %userprofile%/Documents && git init && git clone git@github.com:colin-la/hogwarts-colin-timothee-int1 && rmdir /s /q .git
 
 </p>
 </details>
