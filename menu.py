@@ -15,7 +15,7 @@ def launch_menu_choice() -> None:
  "Hufflepuff": 0,
  "Ravenclaw": 0
 }
-    for key in load_file("data/houses.json").keys():
+    for key in load_file("./data/houses.json").keys():
         houses[key] = 0
     choice = display_main_menu()
     if choice == 1:

@@ -54,4 +54,4 @@ def load_file(file_path: str) -> dict:
 if __name__ == "__main__":
     choice = ask_number("Courage level (1-10): ", 1, 10)
     choice2 = ask_choice("Do you want to continue ? ", ["Yes", "No"])
-    print(load_file("../data/inventory.json"))
+    print(load_file("./data/inventory.json"))
