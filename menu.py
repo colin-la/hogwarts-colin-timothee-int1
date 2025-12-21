@@ -28,6 +28,6 @@ def launch_menu_choice() -> None:
             print("Too bad... \nGoodbye and see you next time !")
             sleep(2)
             return None
-sys.exit(1)
+
 if __name__ == "__main__":
     launch_menu_choice()
