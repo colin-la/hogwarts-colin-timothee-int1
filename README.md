@@ -159,9 +159,6 @@ if __name__ == "__main__":
 If functions needed input from the user, we entered anything (numbers when we needed letters and vice-versa).
 No major bugs were seen. 
 ```
-
-## What remains to be done ?
-
 ### Problems Remaining
 ```
 Cannot launchs display_main_menu at the end of the game (idk why), which means that, when you loose or end the game, it exit the python script
