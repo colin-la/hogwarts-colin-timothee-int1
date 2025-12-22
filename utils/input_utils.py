@@ -1,4 +1,4 @@
-import json
+import json, time
 
 def ask_text(message: str) -> str:
     """
@@ -51,7 +51,23 @@ def load_file(file_path: str) -> dict:
 
 
 
+def print_slow(text, vitesse=100):
+    """
+    comme un print mais avec une vitesse variable 
+    le caractere retour à la ligne est supportés
+    vitesse par défaut = 100
+    vitesse très lente = 40
+    vitesse normal = 100
+    vitesse très rapide = 300
+    """
+    for letter in text:
+        print(letter, end="", flush=True)
+        time.sleep(5/vitesse)
+
+
+
 if __name__ == "__main__":
     choice = ask_number("Courage level (1-10): ", 1, 10)
     choice2 = ask_choice("Do you want to continue ? ", ["Yes", "No"])
-    print(load_file("./data/inventory.json"))
+    print(load_file("data/inventory.json"))
+    print_slow("bonjour, comment est votre blanquette ?", 230)
