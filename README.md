@@ -142,27 +142,44 @@ put "./" (no need to go up in the folder tree)
 
 # Control, Testing, and Validation
 ### Input and Error Management
-    In the ask_choice, ask_number and ask_text functions, we used try / exept statements (which was explicitly authorized by our professor) to handle input errors
-
+```
+In the ask_choice, ask_number and ask_text functions, we used try / exept statements (which was explicitly authorized by our professor) to handle input errors
+```
     
 ### Testing Strategies
-    We used this statement to test each functions in each files individually and regularly
+```
+We used this statement to test each functions in each files individually and regularly
+```
+
 ```python    
 if __name__ == "__main__":
     # test of the functions
 ```
+```
+If functions needed input from the user, we entered anything (numbers when we needed letters and vice-versa).
+No major bugs were seen. 
+```
 
-    If functions needed input from the user, we entered anything (numbers when we needed letters and vice-versa).
-    No major bugs were seen. 
+## What remains to be done ?
 
+### Problems Remaining
+```
+Cannot launchs display_main_menu at the end of the game (idk why), which means that, when you loose or end the game, it exit the python script
 
-## Problems remaining
+Chapter 4 not finished 
 
-- Cannot launchs display_main_menu at the end of the game (idk why), which means that, when you loose or end the game, it exit the python script
+We have to decide if we do an optionnal chapter
+```
 
-- Chapter 4 not finished 
+### Features Remaining
+```
+Chapter 4 (quidditch match) need to be finished.
 
-- We have to decide if we do an optionnal chapter
+Be able to launch the display_main_menu() at the end of the game or at the game over
 
+If we have time, make a chapter 5 for bonus points
+
+If we have time, we can also re-write a print() function that will display the text character by character (not all at once) to have the time to read and for the game to be more enjoyable
+```
 
 
