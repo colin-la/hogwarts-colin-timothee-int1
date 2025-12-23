@@ -56,7 +56,7 @@ def meet_friends(character: dict) -> None:
 def welcome_message() -> None:
     print("An old man approch you.")
     print("Pr. Dumbledore: — Hi ! I'm Professor Dumbledore and i will be your main teacher")
-    print("Pr. Dumbledore: — If you have any question, don't be afraid to ask me")
+    print("Pr. Dumbledore: — If you have any question, don't be afraid to ask me\n")
 
 def sorting_ceremony(character) -> int:
     questions = [
@@ -81,7 +81,7 @@ def sorting_ceremony(character) -> int:
     character["House"] = assign_house(character, questions)
     house = character["House"]
     print(f"The Sorting Hat exclaims: {house}!!!")
-    print(f"You join the {house} students to loud cheers!")
+    print(f"You join the {house} students to loud cheers!\n")
     return character["House"]
     
 def enter_common_room(character) -> None: 

@@ -15,9 +15,10 @@ def learn_spells(character: dict, file_path="data/spells.json") -> None:
             random_spell = list_of_spells[randint(0, len(list_of_spells)-1)]
         add_item(character, "Spells", random_spell['name'])
         print("You have just learned the spell: {} ({})".format(random_spell["name"], random_spell["type"]))
-        input("Press Enter to continue...")
+        input("Press Enter to continue...\n")
         current_spells_types[random_spell["type"]] += 1
-    print('\nYou have completed your basic spell training at Hogwarts!\nHere are the spells you now master:\n')
+    print('\nYou have completed your basic spell training at Hogwarts!')
+    print('Here are the spells you now master:\n')
     for spell in character['Spells']:
         spell_type = ''
         spell_description = ''
@@ -32,7 +33,8 @@ def magic_quiz(character, file_path="data/magic_quiz.json") -> int:
     """
     plays the scenario of the magic quiz and returns the amount of points scored
     """
-    print('Wellcome to the Hogwarts magic quiz!\nAnswer the 4 questions correctly to earn points for your house.\n')
+    print("Welcome to the Hogwarts magic quiz!")
+    print("Answer the 4 questions correctly to earn points for your house.\n")
     questions_log = []
     questions = load_file(file_path)
     score = 0
@@ -47,18 +49,18 @@ def magic_quiz(character, file_path="data/magic_quiz.json") -> int:
             print("Correct answer! +25 points for your house.")
             score += 25
         questions_log.append(random_question)
-    print("Score obtained:", score, "points")
+    print("Score obtained:", score, "points\n")
     return score
 
 
 def start_chapter_3(character, houses):
     learn_spells(character)
-    input("\nPlease press enter to continue...")
+    input("\nPlease press enter to continue...\n")
     update_house_points(houses, character['House'], magic_quiz(character))
     display_winning_house(houses)
-    input("\nPlease press enter to continue...")
+    input("\nPlease press enter to continue...\n")
     display_character(character)
-    input("\nPlease press enter to continue...")
+    input("\nPlease press enter to continue...\n")
 
 
 

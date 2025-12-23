@@ -22,7 +22,7 @@ def create_character():
 
 def receive_letter():
     print("An owl flies through the window, delivering a letter sealed with the Hogwarts crest...")
-    print("“Dear Student,\n")
+    print("“Dear Student,")
     print("We are pleased to inform you that you have been accepted to Hogwarts")
     print("School of Witchcraft and Wizardry!”\n")
     choice = ask_choice("Do you accept this invitation and go to Hogwarts?\n", ["Yes, of course!", "No, I'd rather stay with Uncle Vernon..."])
