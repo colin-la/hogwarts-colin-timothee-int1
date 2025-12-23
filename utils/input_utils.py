@@ -33,7 +33,7 @@ def ask_choice(message: str, options: list) -> int:
     choix = ask_choice("le message en question", ["oui", "non", "jsp"])
     choix takes 1, 2 or 3
     """
-    print(message)
+    print_slow(message)
     for x in range(len(options)):
         print(f"{x+1}. {options[x]}")
     result = ask_number("Your choice: ", 1, len(options))
@@ -51,7 +51,7 @@ def load_file(file_path: str) -> dict:
 
 
 
-def print_slow(text, vitesse=100):
+def print_slow(*args, vitesse=150, end="\n", flush=False) -> None:
     """
     comme un print mais avec une vitesse variable 
     le caractere retour à la ligne est supportés
@@ -60,9 +60,12 @@ def print_slow(text, vitesse=100):
     vitesse normal = 100
     vitesse très rapide = 300
     """
+    # This line helps to take differents parameters like the real print()
+    text = " ".join(str(arg) for arg in args)
     for letter in text:
         print(letter, end="", flush=True)
         time.sleep(5/vitesse)
+    print(end=end, flush=flush)
 
 
 
@@ -70,4 +73,4 @@ if __name__ == "__main__":
     choice = ask_number("Courage level (1-10): ", 1, 10)
     choice2 = ask_choice("Do you want to continue ? ", ["Yes", "No"])
     print(load_file("data/inventory.json"))
-    print_slow("bonjour, comment est votre blanquette ?", 230)
+    print_slow("bonjour, comment est votre blanquette ?")
