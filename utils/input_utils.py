@@ -1,4 +1,4 @@
-import json
+import json, time, threading, sys
 
 def ask_text(message: str) -> str:
     """
@@ -50,8 +50,30 @@ def load_file(file_path: str) -> dict:
         return json.load(json_file)
 
 
+#########################################################################
+## Creating a thread to animate the "Press Enter to continue" message ###
+#########################################################################
+
+def animation_dots(stop_event):
+    while not stop_event.is_set():
+        for dot in ["."*i for i in range(4)]:
+            sys.stdout.write(f"\rPress Enter to continue {dot}   ")
+            sys.stdout.flush()
+            time.sleep(0.3)
+            if stop_event.is_set():
+                break
+
+def press_enter_to_continue():
+    stop_event = threading.Event()
+    animation_thread = threading.Thread(target=animation_dots, args=(stop_event,))
+    animation_thread.daemon = True
+    animation_thread.start()
+    input()
+    stop_event.set()
+    animation_thread.join()
 
 if __name__ == "__main__":
     choice = ask_number("Courage level (1-10): ", 1, 10)
     choice2 = ask_choice("Do you want to continue ? ", ["Yes", "No"])
     print(load_file("./data/inventory.json"))
+    press_enter_to_continue()
