@@ -1,4 +1,4 @@
-import sys
+import sys, os
 sys.path.append('../')
 
 from universe.character import *
@@ -9,6 +9,8 @@ def introduction():
     print_slow("Welcome to you, stranger. You will live an amazing story")
     print_slow("Without further a do, let's get started !")
     input("Press Enter to continue ...")
+    os.system("cls")
+
 
 def create_character():
     last_name = ask_text("Enter your character's last name: ")
@@ -115,12 +117,15 @@ def start_chapter_1() -> dict:
     introduction()
     character = create_character()
     input("\nPlease press enter to continue...")
+    os.system("cls")
     receive_letter()
     meet_hagrid(character)
     input("\nPlease press enter to continue...")
+    os.system("cls")
     buy_supplies(character)
     print_slow("End of Chapter 1! Your adventure begins at Hogwarts...")
     input("\nPlease press enter to continue...")
+    os.system("cls")
     return character
 
 

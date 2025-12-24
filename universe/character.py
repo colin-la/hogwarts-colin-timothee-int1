@@ -17,6 +17,7 @@ def display_character(character: dict) -> None:
     """
     function displaying everything about a character passed as a parameter (dictionary)
     """
+    os.system("cls")
     print("\n\n")
     print("__________________________________________________________________")
     print_slow("Character profile:", vitesse=130)

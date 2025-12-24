@@ -1,4 +1,4 @@
-import json, time
+import json, time, os
 
 def ask_text(message: str) -> str:
     """
@@ -39,6 +39,7 @@ def ask_choice(message: str, options: list) -> int:
         print_slow(f"{x+1}. {options[x]}", vitesse=250)
         time.sleep(0.5)
     result = ask_number("Your choice: ", 1, len(options))
+    os.system("cls")
     return result
 
 
