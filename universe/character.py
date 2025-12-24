@@ -1,3 +1,5 @@
+from utils.input_utils import *
+
 def init_character(last_name: str, first_name: str, attributes: dict) -> dict:
     """
     function returning a dictionary of a new character using his last name, first name and a dictionary of attributes ({"Courage": 4})
@@ -15,7 +17,9 @@ def display_character(character: dict) -> None:
     """
     function displaying everything about a character passed as a parameter (dictionary)
     """
-    print("Character profile:")
+    print("\n\n")
+    print("__________________________________________________________________")
+    print_slow("Character profile:", vitesse=130)
     for key in character:
         print(key + ":", end=' ')
         if type(character[key]) is dict:
@@ -29,6 +33,10 @@ def display_character(character: dict) -> None:
             print(", ".join(current_list))
         else:
             print(character[key])
+    print("__________________________________________________________________")
+    print("\n\n")
+
+
 
 def modify_money(character: dict, amount: int) -> None:
     """

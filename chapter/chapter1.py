@@ -5,7 +5,10 @@ from universe.character import *
 from utils.input_utils import *
 
 def introduction():
-    input("Welcome to you, stranger. You will live an amazing story \nWithout further a do, let's get started ! \nPress Enter to continue ...")
+    print("\n\n")
+    print_slow("Welcome to you, stranger. You will live an amazing story")
+    print_slow("Without further a do, let's get started !")
+    input("Press Enter to continue ...")
 
 def create_character():
     last_name = ask_text("Enter your character's last name: ")
@@ -21,31 +24,29 @@ def create_character():
     
 
 def receive_letter():
-    print("An owl flies through the window, delivering a letter sealed with the Hogwarts crest...")
-    print("“Dear Student,")
-    print("We are pleased to inform you that you have been accepted to Hogwarts")
-    print("School of Witchcraft and Wizardry!”\n")
+    print_slow("An owl flies through the window, delivering a letter sealed with the Hogwarts crest...")
+    print_slow("“Dear Student,")
+    print_slow("We are pleased to inform you that you have been accepted to Hogwarts")
+    print_slow("School of Witchcraft and Wizardry!”\n")
     choice = ask_choice("Do you accept this invitation and go to Hogwarts?\n", ["Yes, of course!", "No, I'd rather stay with Uncle Vernon..."])
     if choice == 1:
-        print("Thank you, we'll be waiting for you on the platform 9 and 3/4")
-        print("in order to take the Hogwarts Express")
-
+        print_slow("Thank you, we'll be waiting for you on the platform 9 and 3/4 in order to take the Hogwarts Express")
     if choice == 2:
-        print("You tear up the letter, and Uncle Vernon cheers:")
-        print("“EXCELLENT! Finally, someone NORMAL in this house!”")
-        print("The magical world will never know you existed... Game over")
+        print_slow("You tear up the letter, and Uncle Vernon cheers:")
+        print_slow("“EXCELLENT! Finally, someone NORMAL in this house!”")
+        print_slow("The magical world will never know you existed... Game over")
         sys.exit()
 
 def meet_hagrid(character: dict) -> None:
     choice = ask_choice("Hagrid: 'Hello {}! I’m here to help you with your shopping on Diagon Alley.\n\n\
           Do you want to follow Hagrid?".format(character['First Name']), ["Yes", "No"])
     if choice == 2:
-        print("Hagrid gently insists and takes you along anyway!")
+        print_slow("Hagrid gently insists and takes you along anyway!")
     else:
-        print("You follow Hagrid to Diagon Alley!")
+        print_slow("You follow Hagrid to Diagon Alley!")
 
 def buy_supplies(character: dict) -> None:
-    print("Welcome to Diagon Alley!\n\nCatalog of available items:")
+    print_slow("Welcome to Diagon Alley!\n\nCatalog of available items:")
     dict_items = load_file("data/inventory.json")
     # display item list
     for key, value in dict_items.items():
@@ -70,7 +71,7 @@ def buy_supplies(character: dict) -> None:
         choice = ask_number("Enter the number of the item to buy: ", 1, 8)
         if character["Money"] < dict_items[str(choice)][1]:
             print("\n\n\nYou didn't have enough money to pay and the merchant killed you.")
-            print("GAME OVER")
+            print_slow("GAME OVER", 60)
             sys.exit()
             
         # else
@@ -83,7 +84,7 @@ def buy_supplies(character: dict) -> None:
     print("All required items have been purchased!\n")
 
     # display pet list
-    print("It's time to choose your Hogwarts pet!\n")
+    print_slow("It's time to choose your Hogwarts pet!\n")
     input("\nPlease press enter to continue...\n")
     print("You have", character["Money"], "Galleons.\n")
     dict_pet = {
@@ -98,7 +99,7 @@ def buy_supplies(character: dict) -> None:
     choice = ask_choice('Which pet do you want?', ["Owl", "Cat", "Rat", "Toad"])
     if character["Money"] < dict_pet[str(choice)][1]:
         print("\n\n\nYou didn't have enough money to pay and the merchant killed you.")
-        print("GAME OVER")
+        print_slow("GAME OVER", 60)
         sys.exit()
          
     modify_money(character, -1 * dict_pet[str(choice)][1])
@@ -107,7 +108,7 @@ def buy_supplies(character: dict) -> None:
 
 
     # final display of inventory
-    print ("\nAll required items have been successfully purchased! Here is your final inventory:\n\nCharacter Profile")
+    print("\nAll required items have been successfully purchased! Here is your final inventory:\n\n")
     display_character(character)
 
 def start_chapter_1() -> dict:
@@ -118,7 +119,7 @@ def start_chapter_1() -> dict:
     meet_hagrid(character)
     input("\nPlease press enter to continue...")
     buy_supplies(character)
-    print("End of Chapter 1! Your adventure begins at Hogwarts...")
+    print_slow("End of Chapter 1! Your adventure begins at Hogwarts...")
     input("\nPlease press enter to continue...")
     return character
 

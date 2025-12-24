@@ -6,7 +6,8 @@ def ask_text(message: str) -> str:
     """
     anwser = ""
     while anwser == "":
-        anwser = str(input(message+" ")).strip()
+        print_slow(message, end="")
+        anwser = str(input()).strip()
     return anwser
 
 
@@ -35,7 +36,8 @@ def ask_choice(message: str, options: list) -> int:
     """
     print_slow(message)
     for x in range(len(options)):
-        print(f"{x+1}. {options[x]}")
+        print_slow(f"{x+1}. {options[x]}", vitesse=250)
+        time.sleep(0.5)
     result = ask_number("Your choice: ", 1, len(options))
     return result
 
