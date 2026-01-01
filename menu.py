@@ -24,6 +24,10 @@ def launch_menu_choice() -> None:
         start_chapter_2(character)
         start_chapter_3(character, houses)
         start_chapter_4_quidditch(character, houses)
+
+        print("\n\n\nThanks for playing ! Colin and Timothee are happy that you enjoy our game !")
+        print("See you next time !")
+        sys.exit()
     elif choice == 2:
         print("Too bad... \nGoodbye and see you next time !")
         sleep(2)
