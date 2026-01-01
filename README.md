@@ -2,8 +2,7 @@
     
 ### Description
     This project is a textual game that takes place in the hogwarts legacy world.   
-    You will have to make choices
-    that will influence your experience and adventure.
+    You will have to make choices that will influence your experience and adventure.
     Good luck and have fun !
 
 ### Contributors 
@@ -11,45 +10,48 @@
    >[Timothee](https://github.com/Tim-syr/ "@Tim-syr")
 
 
-### Installation
 > [!WARNING]  
 > Before installing our game, you need to have python AND git installed on your machine.   
 
-> [!CAUTION]   
-> If you install it on your own (without the command), be sure to launch the main.py in the hogwarts-colin-timothee-int1 folder (due to error with relative file path with "../")
-
 > [!TIP]   
 > Here is the link to the [Python Website](https://www.python.org/downloads/ "https://www.python.org/downloads/")    
-> And here is the link to the [Git Website](https://git-scm.com/install/windows "https://git-scm.com/install/windows") 
-```
+> Here is the link to the [Git Website](https://git-scm.com/install/windows "https://git-scm.com/install/windows")
+
+### Easy Installation
+
+Download the INSTALL.zip file in the [Release](https://github.com/colin-la/hogwarts-colin-timothee-int1/releases/ "https://github.com/colin-la/hogwarts-colin-timothee-int1/releases/") tab.   
+Extract it   
+Double click on the INSTALL.cmd file in it   
+Then, to launch our game, you will just have to go on your desktop and double click on the Launch_Hogwarts-colin-timothee-int1.cmd file !   
+
+### Manual Installation
+
+> [!CAUTION]   
+> If you install it on your own, be sure to launch the main.py file from the hogwarts-colin-timothee-int1 folder (due to error with relative file path)
+
+
 1. Open your terminal window    
-Win+R -> Type cmd -> Press Enter 
-```
+<kbd>Win+R</kbd> -> Type **cmd** -> Press <kbd>Enter</kbd> 
 
 
-```
-2. Copy/Paste the following command to install the game (in the Documents folder):
-```
+2. Copy/Paste the following command to install the game in the Documents folder :
+
 <details>
     <summary>Installation Command</summary>
 <p>
-
     cd %userprofile%/Documents && git init && git clone https://github.com/colin-la/hogwarts-colin-timothee-int1 && rmdir /s /q .git
-
 </p>
 </details>
 
 
 
 ### Usage
-    If you want to launch the game, launch this command (in your terminal of course):
-    
+
+If you want to launch the game, launch this command (in your terminal of course):    
 <details>
     <summary>Launch Command</summary>
 <p>
-
     cd %userprofile%/Documents/hogwarts-colin-timothee-int1 && python main.py   
-
 </p>
 </details>
 
@@ -60,7 +62,7 @@ Win+R -> Type cmd -> Press Enter
 - Mini game to earn points for your house
 - And of course, much more ! 
 
-
+---
 # Log Book
 ### Project Timeline
 
@@ -131,6 +133,7 @@ put "./" (no need to go up in the folder tree)
 > [menu.py](https://github.com/colin-la/hogwarts-colin-timothee-int1/blob/main/menu.py "menu.py")   
 > [chapter1.py](https://github.com/colin-la/hogwarts-colin-timothee-int1/blob/main/chapter/chapter1.py "chapter1.py")   
 > [chapter2.py](https://github.com/colin-la/hogwarts-colin-timothee-int1/blob/main/chapter/chapter2.py "chapter2.py")   
+> [chapter4.py](https://github.com/colin-la/hogwarts-colin-timothee-int1/blob/main/chapter/chapter4.py "chapter4.py")
 
 ##### [Timothee](https://github.com/Tim-syr/ "@Tim-syr") worked on:
 
@@ -140,6 +143,7 @@ put "./" (no need to go up in the folder tree)
 > [chapter1.py](https://github.com/colin-la/hogwarts-colin-timothee-int1/blob/main/chapter/chapter1.py "chapter1.py")   
 > [chapter3.py](https://github.com/colin-la/hogwarts-colin-timothee-int1/blob/main/chapter/chapter3.py "chapter3.py")
 
+---
 # Control, Testing, and Validation
 ### Input and Error Management
 ```
