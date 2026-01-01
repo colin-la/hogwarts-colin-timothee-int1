@@ -1,4 +1,6 @@
-import json, time, threading, sys
+import json, time, threading, sys, time
+# threading is used in the press_enter_to_continue() 
+# function only
 
 def ask_text(message: str) -> str:
     """
@@ -6,7 +8,8 @@ def ask_text(message: str) -> str:
     """
     anwser = ""
     while anwser == "":
-        anwser = str(input(message+" ")).strip()
+        print_slow(message, end="")
+        anwser = str(input()).strip()
     return anwser
 
 
@@ -33,9 +36,10 @@ def ask_choice(message: str, options: list) -> int:
     choix = ask_choice("le message en question", ["oui", "non", "jsp"])
     choix takes 1, 2 or 3
     """
-    print(message)
+    print_slow(message)
     for x in range(len(options)):
-        print(f"{x+1}. {options[x]}")
+        print_slow(f"{x+1}. {options[x]}", vitesse=250)
+        time.sleep(0.5)
     result = ask_number("Your choice: ", 1, len(options))
     return result
 
@@ -49,31 +53,24 @@ def load_file(file_path: str) -> dict:
     with open(file_path, "r", encoding="utf-8") as json_file:
         return json.load(json_file)
 
+def print_slow(*args, vitesse=150, end="\n", flush=False) -> None:
+    """
+    comme un print mais avec une vitesse variable 
+    le caractere retour à la ligne est supportés
+    vitesse par défaut = 100
+    vitesse très lente = 40
+    vitesse normal = 100
+    vitesse très rapide = 300
+    """
+    # This line helps to take differents parameters like the real print()
+    text = " ".join(str(arg) for arg in args)
+    for letter in text:
+        print(letter, end="", flush=True)
+        time.sleep(5/vitesse)
+    print(end=end, flush=flush)
 
-#########################################################################
-## Creating a thread to animate the "Press Enter to continue" message ###
-#########################################################################
-
-def animation_dots(stop_event):
-    while not stop_event.is_set():
-        for dot in ["."*i for i in range(4)]:
-            sys.stdout.write(f"\rPress Enter to continue {dot}   ")
-            sys.stdout.flush()
-            time.sleep(0.3)
-            if stop_event.is_set():
-                break
-
-def press_enter_to_continue():
-    stop_event = threading.Event()
-    animation_thread = threading.Thread(target=animation_dots, args=(stop_event,))
-    animation_thread.daemon = True
-    animation_thread.start()
-    input()
-    stop_event.set()
-    animation_thread.join()
 
 if __name__ == "__main__":
     choice = ask_number("Courage level (1-10): ", 1, 10)
     choice2 = ask_choice("Do you want to continue ? ", ["Yes", "No"])
     print(load_file("./data/inventory.json"))
-    press_enter_to_continue()
