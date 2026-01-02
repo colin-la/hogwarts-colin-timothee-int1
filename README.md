@@ -1,13 +1,14 @@
 # Hogwarts-colin-timothee-int1
     
 ### Description
-    This project is a textual game that takes place in the hogwarts legacy world.   
-    You will have to make choices that will influence your experience and adventure.
-    Good luck and have fun !
+
+This project is a textual game that takes place in the hogwarts legacy world.   
+You will have to make choices that will influence your experience and adventure.   
+**Good luck** and **have fun** !
 
 ### Contributors 
-   >[Colin](https://github.com/colin-la/ "@colin-la")   
-   >[Timothee](https://github.com/Tim-syr/ "@Tim-syr")
+   >[***Colin***](https://github.com/colin-la/ "@colin-la")   
+   >[***Timothee***](https://github.com/Tim-syr/ "@Tim-syr")
 
 
 > [!WARNING]  
@@ -124,6 +125,16 @@ put "./" (no need to go up in the folder tree)
 </p>
 </details>
 
+<details>
+<summary>During vacations (20 december -> 3 january)</summary>
+<p>    
+- Finished Chapter4.py <br>
+- Created print_slow function <br>   
+- Created cls command (for cleaner terminal) <br>
+- Created animation for "Press enter to continue ..." message<br>
+</p>
+</details>
+
 ### Task Distribution
 
       
@@ -146,41 +157,32 @@ put "./" (no need to go up in the folder tree)
 ---
 # Control, Testing, and Validation
 ### Input and Error Management
-```
+
 In the ask_choice, ask_number and ask_text functions, we used try / exept statements (which was explicitly authorized by our professor) to handle input errors
-```
+
     
 ### Testing Strategies
-```
+
 We used this statement to test each functions in each files individually and regularly
-```
+
 
 ```python    
 if __name__ == "__main__":
     # test of the functions
 ```
-```
+
 If functions needed input from the user, we entered anything (numbers when we needed letters and vice-versa).
 No major bugs were seen. 
-```
+
 ### Problems Remaining
-```
+
 Cannot launchs display_main_menu at the end of the game (idk why), which means that, when you loose or end the game, it exit the python script
 
-Chapter 4 not finished 
-
-We have to decide if we do an optionnal chapter
-```
-
 ### Features Remaining
-```
-Chapter 4 (quidditch match) need to be finished.
 
 Be able to launch the display_main_menu() at the end of the game or at the game over
 
-If we have time, make a chapter 5 for bonus points
-
-If we have time, we can also re-write a print() function that will display the text character by character (not all at once) to have the time to read and for the game to be more enjoyable
-```
+Animate the "Press Enter to continue message ..." (it is done in another branch because we don't know
+if it is authorize to use the module threading)
 
 
