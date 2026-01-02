@@ -101,27 +101,5 @@ def start_chapter_4_quidditch(character, houses):
     
 
 
-"""
-character = {'Last Name': 'qsdf', 
-'First Name': 'qdfsqsf', 'Money': 100, 
-'Inventory': [], 'Spells': [], 
-'Attributes': {'Courage': 1, 'Intelligence': 1, 
-                'Loyalty': 1, 'Ambition': 1}}
-team = {
-'name': 'Gryffindor',
-'score': 0,
-'has_scored': 0,
-'has_stopped': 0,
-'caught_snitch': False,
-'players': [
-'Harry Potter (Seeker)',
-'Ginny Weasley (Chaser)',
-'Katie Bell (Chaser)',
-'Demelza Robins (Chaser)',
-'Ron Weasley (Keeper)',
-'Jimmy Peakes (Beater)',
-'Ritchie Coote (Beater)']}
-"""
-
 if __name__ == "__main__":
     print(f"launch from {__file__}")
