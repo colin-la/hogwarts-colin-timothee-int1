@@ -43,18 +43,18 @@ def print_slow(*args, vitesse=150, end="\n", flush=False) -> None:
     print(end=end, flush=flush)
 
 
-def animation_dots(stop_event):
+def animation_dots(stop_event, custom_message):
     while not stop_event.is_set():
         for dot in ["."*i for i in range(4)]:
-            sys.stdout.write(f"\rPress Enter to continue {dot}   ")
+            sys.stdout.write(f"\r{custom_message} {dot}   ")
             sys.stdout.flush()
             time.sleep(0.3)
             if stop_event.is_set():
                 break
 
-def press_enter_to_continue():
+def press_enter_to_continue(custom_message="Press Enter to continue"):
     stop_event = threading.Event()
-    animation_thread = threading.Thread(target=animation_dots, args=(stop_event,))
+    animation_thread = threading.Thread(target=animation_dots, args=(stop_event, custom_message))
     animation_thread.daemon = True
     animation_thread.start()
     input()

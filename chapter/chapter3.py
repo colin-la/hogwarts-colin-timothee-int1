@@ -1,5 +1,4 @@
 from random import randint
-
 from universe.house import *
 from utils.input_utils import *
 from universe.character import *
@@ -57,7 +56,7 @@ def start_chapter_3(character, houses):
     press_enter_to_continue()
     display_character(character)
     press_enter_to_continue()
-
+    os.system("cls")
 
 
 if __name__ == "__main__":

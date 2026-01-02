@@ -1,5 +1,4 @@
 import sys
-sys.path.append('../')
 from utils.input_utils import *
 from universe.house import *
 from universe.character import *
@@ -77,23 +76,27 @@ def sorting_ceremony(character) -> int:
 def enter_common_room(character) -> None: 
     print_slow("You follow the prefects through the castle corridors...")
     info_house = load_file("data/houses.json")[character["House"]]
-    prints_low(info_house["description"])
-    prints_low(info_house["installation_message"])
-    prints_low("Your house colors:", end="")
+    print_slow(info_house["description"])
+    print_slow(info_house["installation_message"])
+    print_slow("Your house colors:", end="")
     for x in info_house["colors"]:
         print_slow(x, end=" ")
     
 def start_chapter_2(character) -> None:
     meet_friends(character)
+    press_enter_to_continue()
+    os.system("cls")
     welcome_message()
     press_enter_to_continue()
     sorting_ceremony(character)
     press_enter_to_continue()
+    os.system("cls")
     enter_common_room(character)
-    press_enter_to_continue()
     display_character(character)
     print_slow("This is the end of chapter 2 !")
     print_slow("Now, get your pens out and let's start classes !")
+    press_enter_to_continue()
+    os.system("cls")
     
 
 

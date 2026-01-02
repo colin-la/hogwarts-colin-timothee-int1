@@ -68,8 +68,10 @@ def quidditch_match(character, houses):
     display_team(player_house, player_team["players"])
     display_team(opponent_house, opponent_team["players"])
     print_slow(f"You are playing for {player_team["name"]} as the Seeker\n")
+    press_enter_to_continue()
     for i in range(20):
-        print(f"━━━ Round {i+1} ━━━")
+        os.system("cls")
+        print_slow(f"━━━ Round {i+1} ━━━")
         attempt_goal(attacking_team=player_team, defending_team=opponent_team, player_is_seeker=True)
         attempt_goal(defending_team=player_team, attacking_team=opponent_team, player_is_seeker=False)
         display_score(e1=player_team, e2=opponent_team)
@@ -78,7 +80,7 @@ def quidditch_match(character, houses):
             print_slow(f"The Golden Snitch has been caught by {winning_house} ! (+150 points)\n")
             print_slow("End of the match !\n")
             break
-        input("Press Enter to start the next round ...")
+        press_enter_to_continue(custom_message="Press Enter to start the next round")
     display_score(e1=player_team, e2=opponent_team)
     if player_team["score"] > opponent_team["score"]:
         winning_house = player_house
@@ -94,6 +96,8 @@ def start_chapter_4_quidditch(character, houses):
     print_slow("Welcome to the Chapter 4.")
     print_slow("Today, you will participate in a Quidditch match.")
     print_slow("Are you ready ? Let's goooooo !!!\n")
+    press_enter_to_continue()
+    os.system("cls")
     quidditch_match(character, houses)
     print_slow("End of Chapter 4 — What an incredible performance on the field!\n")
     display_winning_house(houses)
@@ -105,3 +109,12 @@ def start_chapter_4_quidditch(character, houses):
 
 if __name__ == "__main__":
     print(f"launch from {__file__}")
+    character = {"Last Name": "potter",
+    "First Name": "harry",
+    "Money": 100,
+    "Inventory" : [],
+    "Spells" : [], 
+    "Attributes": {"Courage": 1,"Intelligence": 1,"Loyalty": 1,"Ambition": 1}
+    }
+    houses = {"Gryffindor": 0, "Slytherin": 0, "Hufflepuff": 0, "Ravenclaw": 0}
+    start_chapter_4_quidditch(character, houses)

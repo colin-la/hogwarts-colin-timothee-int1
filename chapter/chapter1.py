@@ -1,13 +1,11 @@
 import sys, os
-sys.path.append('../')
-
 from universe.character import *
 from utils.input_utils import *
 
 def introduction():
     print_slow("Welcome to you, stranger. You will live an amazing story")
     print_slow("Without further a do, let's get started !")
-    input("Press Enter to continue ...")
+    press_enter_to_continue()
     os.system("cls")
 
 def create_character():
@@ -59,8 +57,8 @@ def buy_supplies(character: dict) -> None:
 
     required = ["Magic Wand", "Wizard Robe", "Potions Book"]
     while len(required) > 0:
-        print("You have", character["Money"], "Galleons.")
-        print("Remaining required items: ", end= " ")
+        print_slow("You have", character["Money"], "Galleons.")
+        print_slow("Remaining required items: ", end= " ")
         for element in required:
             if element == required[-1]:
                 endd = ""
@@ -77,14 +75,15 @@ def buy_supplies(character: dict) -> None:
         modify_money(character, -1 * dict_items[str(choice)][1])
         if dict_items[str(choice)][0] in required:
             required.remove(dict_items[str(choice)][0])
-        print("You bought: {} (-{} Galleons)".format(dict_items[str(choice)][0], dict_items[str(choice)][1]))
+        print_slow("You bought: {} (-{} Galleons)".format(dict_items[str(choice)][0], dict_items[str(choice)][1]))
         print()
         add_item(character, "Inventory", dict_items[str(choice)][0])
     print_slow("All required items have been purchased!\n")
 
     print_slow("It's time to choose your Hogwarts pet!\n")
-    input("\nPress enter to continue...\n")
-    print("You have", character["Money"], "Galleons.\n")
+    press_enter_to_continue()
+    os.system("cls")
+    print_slow("You have", character["Money"], "Galleons.\n")
     dict_pet = {
     "1": ["Owl", 20],
     "2": ["Cat",  15],
