@@ -43,6 +43,25 @@ def print_slow(*args, vitesse=150, end="\n", flush=False) -> None:
     print(end=end, flush=flush)
 
 
+def animation_dots(stop_event):
+    while not stop_event.is_set():
+        for dot in ["."*i for i in range(4)]:
+            sys.stdout.write(f"\rPress Enter to continue {dot}   ")
+            sys.stdout.flush()
+            time.sleep(0.3)
+            if stop_event.is_set():
+                break
+
+def press_enter_to_continue():
+    stop_event = threading.Event()
+    animation_thread = threading.Thread(target=animation_dots, args=(stop_event,))
+    animation_thread.daemon = True
+    animation_thread.start()
+    input()
+    stop_event.set()
+    animation_thread.join()
+
+
 if __name__ == "__main__":
     choice = ask_number("Courage level (1-10): ", 1, 10)
     choice2 = ask_choice("Do you want to continue ? ", ["Yes", "No"])

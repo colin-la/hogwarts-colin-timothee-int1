@@ -110,15 +110,15 @@ def buy_supplies(character: dict) -> None:
 def start_chapter_1() -> dict:
     introduction()
     character = create_character()
-    input("\nPress enter to continue...")
+    press_enter_to_continue()
     os.system("cls")
     receive_letter()
     meet_hagrid(character)
-    input("\nPress enter to continue...")
+    press_enter_to_continue()
     os.system("cls")
     buy_supplies(character)
     print_slow("End of Chapter 1! Your adventure begins at Hogwarts...")
-    input("\nPress enter to continue...")
+    press_enter_to_continue()
     os.system("cls")
     return character
 

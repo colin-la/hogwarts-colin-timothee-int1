@@ -15,7 +15,7 @@ def learn_spells(character: dict, file_path="data/spells.json") -> None:
             random_spell = list_of_spells[randint(0, len(list_of_spells)-1)]
         add_item(character, "Spells", random_spell['name'])
         print("You have just learned the spell: {} ({})".format(random_spell["name"], random_spell["type"]))
-        input("Press Enter to continue...\n")
+        press_enter_to_continue()
         current_spells_types[random_spell["type"]] += 1
     print_slow('\nYou have completed your basic spell training at Hogwarts!')
     print_slow('Here are the spells you now master:\n')
@@ -51,12 +51,12 @@ def magic_quiz(character, file_path="data/magic_quiz.json") -> int:
 
 def start_chapter_3(character, houses):
     learn_spells(character)
-    input("\nPress enter to continue...")
+    press_enter_to_continue()
     update_house_points(houses, character['House'], magic_quiz(character))
     display_winning_house(houses)
-    input("\nPress enter to continue...")
+    press_enter_to_continue()
     display_character(character)
-    input("\nPress enter to continue...")
+    press_enter_to_continue()
 
 
 
