@@ -21,7 +21,7 @@ def create_team(house: str, team_data: dict, is_player=False, player=None) -> di
 
 def attempt_goal(attacking_team, defending_team, player_is_seeker=False) -> None:
     print(f"The attacking team is attempting to score a goal !")
-    print(f" - Attaaaaack ! says the team leader !\n")
+    print_slow(f" - Attaaaaack ! says the team leader !")
     chance_goal = randint(1, 10)
     if chance_goal >= 6:
         if player_is_seeker:
@@ -99,6 +99,8 @@ def start_chapter_4_quidditch(character, houses):
     display_winning_house(houses)
     display_character(character)
     
+
+
 
 
 if __name__ == "__main__":

@@ -1,9 +1,10 @@
-import json, time
+import json, time, threading, sys, time
 
 def ask_text(message: str) -> str:
     anwser = ""
     while anwser == "":
-        anwser = str(input(message+" ")).strip()
+        print_slow(message, end="")
+        anwser = str(input()).strip()
     return anwser
 
 
@@ -24,6 +25,7 @@ def ask_choice(message: str, options: list) -> int:
     print_slow(message)
     for x in range(len(options)):
         print(f"{x+1}. {options[x]}")
+        time.sleep(0.3)
     result = ask_number("Your choice: ", 1, len(options))
     return result
 
@@ -32,7 +34,21 @@ def load_file(file_path: str) -> dict:
     with open(file_path, "r", encoding="utf-8") as json_file:
         return json.load(json_file)
 
-
+def print_slow(*args, vitesse=150, end="\n", flush=False) -> None:
+    """
+    comme un print mais avec une vitesse variable 
+    le caractere retour à la ligne est supportés
+    vitesse par défaut = 100
+    vitesse très lente = 40
+    vitesse normal = 100
+    vitesse très rapide = 300
+    """
+    # This line helps to take differents parameters like the real print()
+    text = " ".join(str(arg) for arg in args)
+    for letter in text:
+        print(letter, end="", flush=True)
+        time.sleep(5/vitesse)
+    print(end=end, flush=flush)
 
 
 if __name__ == "__main__":
