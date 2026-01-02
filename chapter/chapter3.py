@@ -5,7 +5,7 @@ from utils.input_utils import *
 from universe.character import *
 
 def learn_spells(character: dict, file_path="data/spells.json") -> None:
-    print("You begin your magic lessons at Hogwarts...")
+    print_slow("You begin your magic lessons at Hogwarts...")
     list_of_spells = load_file(file_path)
     quota = {"Offensive": 1, "Defensive": 1, "Utility": 3}
     current_spells_types = {"Offensive": 0, "Defensive": 0, "Utility": 0} # keeps track of the spells (to meet the quota)
@@ -32,7 +32,7 @@ def magic_quiz(character, file_path="data/magic_quiz.json") -> int:
     """
     plays the scenario of the magic quiz and returns the amount of points scored
     """
-    print('Wellcome to the Hogwarts magic quiz!\nAnswer the 4 questions correctly to earn points for your house.\n')
+    print_slow('Wellcome to the Hogwarts magic quiz!\nAnswer the 4 questions correctly to earn points for your house.\n')
     questions_log = []
     questions = load_file(file_path)
     score = 0
@@ -42,9 +42,9 @@ def magic_quiz(character, file_path="data/magic_quiz.json") -> int:
             random_question = questions[randint(0, len(questions)-1)]
         answer = ask_text('{}. {}'.format(i+1, random_question['question']))
         if answer != random_question['answer']:
-            print("Wrong answer. The correct answer was:", random_question['answer'])
+            print_slow("Wrong answer. The correct answer was:", random_question['answer'])
         else:
-            print("Correct answer! +25 points for your house.")
+            print_slow("Correct answer! +25 points for your house.")
             score += 25
         questions_log.append(random_question)
     print("Score obtained:", score, "points")
@@ -53,12 +53,12 @@ def magic_quiz(character, file_path="data/magic_quiz.json") -> int:
 
 def start_chapter_3(character, houses):
     learn_spells(character)
-    input("\nPlease press enter to continue...")
+    input("\nPress enter to continue...")
     update_house_points(houses, character['House'], magic_quiz(character))
     display_winning_house(houses)
-    input("\nPlease press enter to continue...")
+    input("\nPress enter to continue...")
     display_character(character)
-    input("\nPlease press enter to continue...")
+    input("\nPress enter to continue...")
 
 
 

@@ -1,6 +1,4 @@
 import json, time, threading, sys, time
-# threading is used in the press_enter_to_continue() 
-# function only
 
 def ask_text(message: str) -> str:
     """
@@ -38,8 +36,8 @@ def ask_choice(message: str, options: list) -> int:
     """
     print_slow(message)
     for x in range(len(options)):
-        print_slow(f"{x+1}. {options[x]}", vitesse=250)
-        time.sleep(0.5)
+        print(f"{x+1}. {options[x]}")
+        time.sleep(0.3)
     result = ask_number("Your choice: ", 1, len(options))
     return result
 

@@ -21,7 +21,7 @@ def create_team(house: str, team_data: dict, is_player=False, player=None) -> di
 
 def attempt_goal(attacking_team, defending_team, player_is_seeker=False) -> None:
     print(f"The attacking team is attempting to score a goal !")
-    print(f" - Attaaaaack ! says the team leader !")
+    print_slow(f" - Attaaaaack ! says the team leader !")
     chance_goal = randint(1, 10)
     if chance_goal >= 6:
         if player_is_seeker:
@@ -60,22 +60,6 @@ def start_chapter_4_quidditch(character, houses):
 
 
 
-"""
-team = {
-'name': 'Gryffindor',
-'score': 0,
-'has_scored': 0,
-'has_stopped': 0,
-'caught_snitch': False,
-'players': [
-'Harry Potter (Seeker)',
-'Ginny Weasley (Chaser)',
-'Katie Bell (Chaser)',
-'Demelza Robins (Chaser)',
-'Ron Weasley (Keeper)',
-'Jimmy Peakes (Beater)',
-'Ritchie Coote (Beater)']}
-"""
 
 if __name__ == "__main__":
     print(f"launch from {__file__}")

@@ -1,3 +1,8 @@
+import sys
+sys.path.append('../')
+
+from utils.input_utils import *
+
 def init_character(last_name: str, first_name: str, attributes: dict) -> dict:
     """
     function returning a dictionary of a new character using his last name, first name and a dictionary of attributes ({"Courage": 4})
@@ -15,20 +20,23 @@ def display_character(character: dict) -> None:
     """
     function displaying everything about a character passed as a parameter (dictionary)
     """
-    print("Character profile:")
+    print("\n\n---------------------------------------------------")
+    print_slow("Character profile:", vitesse=300)
     for key in character:
-        print(key + ":", end=' ')
+        print_slow(key + ":", end=' ', vitesse=300)
         if type(character[key]) is dict:
-            print()
+            print_slow(vitesse=300)
             for key2, value2 in character[key].items():
-                print(" - {}: {}".format(key2, value2))
+                print_slow(" - {}: {}".format(key2, value2), vitesse=300)
         elif type(character[key]) is list:
             current_list = character[key]
             for i in range(len(current_list)):
                 current_list[i] = str(current_list[i])
-            print(", ".join(current_list))
+            print_slow(", ".join(current_list), vitesse=300)
         else:
-            print(character[key])
+            print_slow(character[key], vitesse=300)
+    print("---------------------------------------------------\n\n")
+    
 
 def modify_money(character: dict, amount: int) -> None:
     """

@@ -11,52 +11,52 @@ def meet_friends(character: dict) -> None:
     utilisation : meet_friends({"Ambition":5, "Intelligence":4,...})
     it just make you meet ron hermione draco in the train to Hogwart
     """
-    print("You board the Hogwarts Express. The train slowly departs northward...")
+    print_slow("You board the Hogwarts Express. The train slowly departs northward...")
     # Ron Weasley
-    print("A red-haired boy enters your compartment, looking friendly.")
-    print("— Hi! I'm Ron Weasley. Mind if I sit with you?")
+    print_slow("A red-haired boy enters your compartment, looking friendly.")
+    print_slow("— Hi! I'm Ron Weasley. Mind if I sit with you?")
     choice = ask_choice("How do you respond?", ["Sure, have a seat", "Sorry, I prefer to travel alone."])    
     attributes = character["Attributes"]
     if choice == 1:
         attributes["Loyalty"] += 1
-        print("Ron smiles: — Awesome! You'll see, Hogwarts is amazing!")
+        print_slow("Ron smiles: — Awesome! You'll see, Hogwarts is amazing!")
     else :
         attributes["Ambition"] += 1
-        print("Ron just ignore you")
+        print_slow("Ron just ignore you")
     # Hermione Granger
-    print("A girl enters next, already carrying a stack of books.")
-    print("— Hello, I'm Hermione Granger. Have you ever read 'A History of Magic'?")
+    print_slow("A girl enters next, already carrying a stack of books.")
+    print_slow("— Hello, I'm Hermione Granger. Have you ever read 'A History of Magic'?")
     choice = ask_choice("How do you respond?", ["Yes, I love learning new things!", "Uh… no, I prefer adventures over books."])
     if choice == 1:
         attributes["Intelligence"] += 1
-        print("Hermione smiles, impressed: — Oh, that's rare! You must be very clever!")
+        print_slow("Hermione smiles, impressed: — Oh, that's rare! You must be very clever!")
     else :
         attributes["Courage"] += 1
-        print("Hermione: — No problem, i will read it alone")
+        print_slow("Hermione: — No problem, i will read it alone")
     # Draco Malfoy
-    print("Then a blonde boy enters, looking arrogant.")
-    print("— I'm Draco Malfoy. It's best to choose your friends carefully from the")
-    print("start, don't you think")
+    print_slow("Then a blonde boy enters, looking arrogant.")
+    print_slow("— I'm Draco Malfoy. It's best to choose your friends carefully from the")
+    print_slow("start, don't you think")
     choice = ask_choice("How do you respond?", ["Shake his hand politely.", "Ignore him completely.", "Respond with arrogance."])
     if choice == 1:
         attributes["Ambition"] += 1
-        print("Draco smiles: — You will be my best friend from now on !")
+        print_slow("Draco smiles: — You will be my best friend from now on !")
     elif choice == 2:
         attributes["Loyalty"] += 1
-        print("Draco frowns, annoyed. — You'll regret that!")
+        print_slow("Draco frowns, annoyed. — You'll regret that!")
     else :
         attributes["Courage"] += 1
-        print("You: — You should probably find better approch to make friends you looser")
+        print_slow("You: — You should probably find better approch to make friends you looser")
     # End
-    print("The train continues its journey. Hogwarts Castle appears on the horizon...")
-    print("Your choices already say a lot about your personality!")
+    print_slow("The train continues its journey. Hogwarts Castle appears on the horizon...")
+    print_slow("Your choices already say a lot about your personality!")
     print("Your updated attributes: ", end="")
     display_character(character)
 
 def welcome_message() -> None:
     print("An old man approch you.")
-    print("Pr. Dumbledore: — Hi ! I'm Professor Dumbledore and i will be your main teacher")
-    print("Pr. Dumbledore: — If you have any question, don't be afraid to ask me")
+    print_slow("Pr. Dumbledore: — Hi ! I'm Professor Dumbledore and i will be your main teacher")
+    print_slow("Pr. Dumbledore: — If you have any question, don't be afraid to ask me")
 
 def sorting_ceremony(character) -> int:
     questions = [
@@ -76,16 +76,16 @@ def sorting_ceremony(character) -> int:
                         ["Gryffindor", "Slytherin", "Hufflepuff", "Ravenclaw"]
                     )
                 ]
-    print("The sorting ceremony begins in the Great Hall...")
+    print_slow("The sorting ceremony begins in the Great Hall...")
     print("The Sorting Hat observes you for a long time before asking its questions:")
     character["House"] = assign_house(character, questions)
     house = character["House"]
-    print(f"The Sorting Hat exclaims: {house}!!!")
-    print(f"You join the {house} students to loud cheers!")
+    print_slow(f"The Sorting Hat exclaims: {house}!!!")
+    print_slow(f"You join the {house} students to loud cheers!")
     return character["House"]
     
 def enter_common_room(character) -> None: 
-    print("You follow the prefects through the castle corridors...")
+    print_slow("You follow the prefects through the castle corridors...")
     info_house = load_file("data/houses.json")[character["House"]]
     print(info_house["description"])
     print(info_house["installation_message"])
@@ -102,7 +102,7 @@ def start_chapter_2(character) -> None:
     enter_common_room(character)
     input("\nPress Enter to continue ...")
     display_character(character)
-    print("This is the end of chapter 2.")
+    print("This is the end of chapter 2 !")
     print("Now, get your pens out and let's start classes !")
     
 
