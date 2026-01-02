@@ -44,9 +44,9 @@ def meet_friends(character: dict) -> None:
     display_character(character)
 
 def welcome_message() -> None:
-    print("An old man approch you.")
-    print("Pr. Dumbledore: — Hi ! I'm Professor Dumbledore and i will be your main teacher")
-    print("Pr. Dumbledore: — If you have any question, don't be afraid to ask me")
+    print_slow("An old man approch you.")
+    print_slow("Pr. Dumbledore: — Hi ! I'm Professor Dumbledore and i will be your main teacher")
+    print_slow("Pr. Dumbledore: — If you have any question, don't be afraid to ask me")
 
 def sorting_ceremony(character) -> int:
     questions = [
@@ -77,11 +77,11 @@ def sorting_ceremony(character) -> int:
 def enter_common_room(character) -> None: 
     print_slow("You follow the prefects through the castle corridors...")
     info_house = load_file("data/houses.json")[character["House"]]
-    print(info_house["description"])
-    print(info_house["installation_message"])
-    print("Your house colors:", end="")
+    prints_low(info_house["description"])
+    prints_low(info_house["installation_message"])
+    prints_low("Your house colors:", end="")
     for x in info_house["colors"]:
-        print(x, end=" ")
+        print_slow(x, end=" ")
     
 def start_chapter_2(character) -> None:
     meet_friends(character)
@@ -92,8 +92,8 @@ def start_chapter_2(character) -> None:
     enter_common_room(character)
     input("\nPress Enter to continue ...")
     display_character(character)
-    print("This is the end of chapter 2 !")
-    print("Now, get your pens out and let's start classes !")
+    print_slow("This is the end of chapter 2 !")
+    print_slow("Now, get your pens out and let's start classes !")
     
 
 

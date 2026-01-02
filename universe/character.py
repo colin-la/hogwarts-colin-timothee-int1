@@ -17,18 +17,18 @@ def display_character(character: dict) -> None:
     print("\n\n---------------------------------------------------")
     print_slow("Character profile:", vitesse=300)
     for key in character:
-        print_slow(key + ":", end=' ', vitesse=300)
+        print_slow(key + ":", end=' ', vitesse=500)
         if type(character[key]) is dict:
-            print_slow(vitesse=300)
+            print_slow(vitesse=500)
             for key2, value2 in character[key].items():
-                print_slow(" - {}: {}".format(key2, value2), vitesse=300)
+                print_slow(" - {}: {}".format(key2, value2), vitesse=500)
         elif type(character[key]) is list:
             current_list = character[key]
             for i in range(len(current_list)):
                 current_list[i] = str(current_list[i])
-            print_slow(", ".join(current_list), vitesse=300)
+            print_slow(", ".join(current_list), vitesse=500)
         else:
-            print_slow(character[key], vitesse=300)
+            print_slow(character[key], vitesse=500)
     print("---------------------------------------------------\n\n")
     
 

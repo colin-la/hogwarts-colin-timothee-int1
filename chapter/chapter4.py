@@ -20,7 +20,7 @@ def create_team(house: str, team_data: dict, is_player=False, player=None) -> di
 
 
 def attempt_goal(attacking_team, defending_team, player_is_seeker=False) -> None:
-    print(f"The attacking team is attempting to score a goal !")
+    print_slow(f"The attacking team is attempting to score a goal !")
     print_slow(f" - Attaaaaack ! says the team leader !")
     chance_goal = randint(1, 10)
     if chance_goal >= 6:
@@ -30,10 +30,10 @@ def attempt_goal(attacking_team, defending_team, player_is_seeker=False) -> None
             scoring_player = choice(attacking_team["players"][1::])
         attacking_team["score"] += 10
         attacking_team["goals_scored"] += 1
-        print(f"This attack was amazing ! {scoring_player} scores a goal for {attacking_team["name"]} ! (+10 points)\n")
+        print_slow(f"This attack was amazing ! {scoring_player} scores a goal for {attacking_team["name"]} ! (+10 points)\n")
     else :
         defending_team["goals_blocked"] += 1
-        print(f"The attack wasn't strong enough ! {defending_team["name"]} blocked the attack!\n")
+        print_slow(f"The attack wasn't strong enough ! {defending_team["name"]} blocked the attack!\n")
 
 def golden_snitch_appears() -> bool:
     return randint(1, 6) == 6
@@ -67,7 +67,7 @@ def quidditch_match(character, houses):
                             team_data=data[opponent_house]["players"], is_player=False)
     display_team(player_house, player_team["players"])
     display_team(opponent_house, opponent_team["players"])
-    print(f"You are playing for {player_team["name"]} as the Seeker\n")
+    print_slow(f"You are playing for {player_team["name"]} as the Seeker\n")
     for i in range(20):
         print(f"━━━ Round {i+1} ━━━")
         attempt_goal(attacking_team=player_team, defending_team=opponent_team, player_is_seeker=True)
@@ -75,8 +75,8 @@ def quidditch_match(character, houses):
         display_score(e1=player_team, e2=opponent_team)
         if golden_snitch_appears():
             winning_house = catch_golden_snitch(player_team, opponent_team)["name"] 
-            print(f"The Golden Snitch has been caught by {winning_house} ! (+150 points)\n")
-            print("End of the match !\n")
+            print_slow(f"The Golden Snitch has been caught by {winning_house} ! (+150 points)\n")
+            print_slow("End of the match !\n")
             break
         input("Press Enter to start the next round ...")
     display_score(e1=player_team, e2=opponent_team)
@@ -91,11 +91,11 @@ def quidditch_match(character, houses):
     
 
 def start_chapter_4_quidditch(character, houses):
-    print("Welcome to the Chapter 4.")
-    print("Today, you will participate in a Quidditch match.")
-    print("Are you ready ? Let's goooooo !!!\n")
+    print_slow("Welcome to the Chapter 4.")
+    print_slow("Today, you will participate in a Quidditch match.")
+    print_slow("Are you ready ? Let's goooooo !!!\n")
     quidditch_match(character, houses)
-    print("End of Chapter 4 — What an incredible performance on the field!\n")
+    print_slow("End of Chapter 4 — What an incredible performance on the field!\n")
     display_winning_house(houses)
     display_character(character)
     

@@ -114,7 +114,7 @@ def start_chapter_1() -> dict:
     meet_hagrid(character)
     input("\nPress enter to continue...")
     buy_supplies(character)
-    print("End of Chapter 1! Your adventure begins at Hogwarts...")
+    print_slow("End of Chapter 1! Your adventure begins at Hogwarts...")
     input("\nPress enter to continue...")
     return character
 

@@ -17,8 +17,8 @@ def learn_spells(character: dict, file_path="data/spells.json") -> None:
         print("You have just learned the spell: {} ({})".format(random_spell["name"], random_spell["type"]))
         input("Press Enter to continue...\n")
         current_spells_types[random_spell["type"]] += 1
-    print('\nYou have completed your basic spell training at Hogwarts!')
-    print('Here are the spells you now master:\n')
+    print_slow('\nYou have completed your basic spell training at Hogwarts!')
+    print_slow('Here are the spells you now master:\n')
     for spell in character['Spells']:
         spell_type = ''
         spell_description = ''
