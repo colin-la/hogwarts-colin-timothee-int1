@@ -5,14 +5,7 @@ from universe.house import *
 from universe.character import *
 
 def meet_friends(character: dict) -> None:
-    """
-    input : dico character with attributes (like Intelligence, Ambition ...)
-    output: same dico but updated with new values
-    utilisation : meet_friends({"Ambition":5, "Intelligence":4,...})
-    it just make you meet ron hermione draco in the train to Hogwart
-    """
     print("You board the Hogwarts Express. The train slowly departs northward...")
-    # Ron Weasley
     print("A red-haired boy enters your compartment, looking friendly.")
     print("— Hi! I'm Ron Weasley. Mind if I sit with you?")
     choice = ask_choice("How do you respond?", ["Sure, have a seat", "Sorry, I prefer to travel alone."])    
@@ -23,7 +16,6 @@ def meet_friends(character: dict) -> None:
     else :
         attributes["Ambition"] += 1
         print("Ron just ignore you")
-    # Hermione Granger
     print("A girl enters next, already carrying a stack of books.")
     print("— Hello, I'm Hermione Granger. Have you ever read 'A History of Magic'?")
     choice = ask_choice("How do you respond?", ["Yes, I love learning new things!", "Uh… no, I prefer adventures over books."])
@@ -33,7 +25,6 @@ def meet_friends(character: dict) -> None:
     else :
         attributes["Courage"] += 1
         print("Hermione: — No problem, i will read it alone")
-    # Draco Malfoy
     print("Then a blonde boy enters, looking arrogant.")
     print("— I'm Draco Malfoy. It's best to choose your friends carefully from the")
     print("start, don't you think")
@@ -47,7 +38,6 @@ def meet_friends(character: dict) -> None:
     else :
         attributes["Courage"] += 1
         print("You: — You should probably find better approch to make friends you looser")
-    # End
     print("The train continues its journey. Hogwarts Castle appears on the horizon...")
     print("Your choices already say a lot about your personality!")
     print("Your updated attributes: ", end="")

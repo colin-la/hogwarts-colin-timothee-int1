@@ -11,11 +11,11 @@ def display_main_menu() -> int:
 
 def launch_menu_choice() -> None:
     houses =  {
- "Gryffindor": 0,
- "Slytherin": 0,
- "Hufflepuff": 0,
- "Ravenclaw": 0
-}
+    "Gryffindor": 0,
+    "Slytherin": 0,
+    "Hufflepuff": 0,
+    "Ravenclaw": 0
+    }
     for key in load_file("./data/houses.json").keys():
         houses[key] = 0
     choice = display_main_menu()

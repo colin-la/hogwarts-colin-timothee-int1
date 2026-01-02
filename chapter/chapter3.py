@@ -30,9 +30,6 @@ def learn_spells(character: dict, file_path="data/spells.json") -> None:
 
 
 def magic_quiz(character, file_path="data/magic_quiz.json") -> int:
-    """
-    plays the scenario of the magic quiz and returns the amount of points scored
-    """
     print("Welcome to the Hogwarts magic quiz!")
     print("Answer the 4 questions correctly to earn points for your house.\n")
     questions_log = []

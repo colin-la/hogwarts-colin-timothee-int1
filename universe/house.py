@@ -2,12 +2,7 @@ from math import inf
 from utils.input_utils import *
 
 def update_house_points(houses: dict, house_name: str, points: int) -> None:
-    """
-    Updates a specific house's points.
-    update_house_points({"Gryffindor": 0}, 'Gryffindor', -6) will change the dictionary to {"Gryffindor": -6}
-    """
     if house_name not in houses:
-        # warning message
         print("WARNING: The house's name you're trying to update is NOT in the dictionary provided.")
         return
     houses[house_name] += points
@@ -19,12 +14,6 @@ def update_house_points(houses: dict, house_name: str, points: int) -> None:
     print("It now has {} point(s).".format(houses[house_name]))
 
 def display_winning_house(houses: dict) -> None:
-    '''
-    display_winning_house({"Gryffindor": 5, 'Hufflepuff': 3}) displays
-    Here are the winning house(s):
-
-    - Gryffindor with 5 point(s)!
-    '''
     maxi = -1 * inf
     for points in houses.values():
         if maxi < points:
@@ -35,10 +24,6 @@ def display_winning_house(houses: dict) -> None:
             print("- {} with {} point(s)!".format(house, points))
 
 def assign_house(character: dict, questions: list) -> str:
-    '''
-    parameter: questions is a list of tuples containing: (1) the question text, (2) a list of possible choices(str), and (3) the corresponding houses for each answer. check page 14 of the pdf for an example.
-    returns a house depending on the answers to the questions given
-    '''
     dico = {"Gryffindor": 0, "Slytherin": 0, "Hufflepuff": 0, "Ravenclaw": 0}
     for attribute, value in character["Attributes"].items():
         if attribute == 'Courage':

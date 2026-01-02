@@ -47,7 +47,6 @@ def meet_hagrid(character: dict) -> None:
 def buy_supplies(character: dict) -> None:
     print("Welcome to Diagon Alley!\n\nCatalog of available items:")
     dict_items = load_file("data/inventory.json")
-    # display item list
     for key, value in dict_items.items():
         if dict_items[key][0] in ["Magic Wand", "Wizard Robe", "Potions Book"]:
             message = " (required)"
@@ -55,7 +54,6 @@ def buy_supplies(character: dict) -> None:
             message = ""
         print("{}. {} - {} Galleons".format(key, dict_items[key][0], dict_items[key][1]) + message)
 
-    # buying required items loop
     required = ["Magic Wand", "Wizard Robe", "Potions Book"]
     while len(required) > 0:
         print("You have", character["Money"], "Galleons.")
@@ -73,7 +71,6 @@ def buy_supplies(character: dict) -> None:
             print("GAME OVER")
             sys.exit()
             
-        # else
         modify_money(character, -1 * dict_items[str(choice)][1])
         if dict_items[str(choice)][0] in required:
             required.remove(dict_items[str(choice)][0])
@@ -82,7 +79,6 @@ def buy_supplies(character: dict) -> None:
         add_item(character, "Inventory", dict_items[str(choice)][0])
     print("All required items have been purchased!\n")
 
-    # display pet list
     print("It's time to choose your Hogwarts pet!\n")
     input("\nPlease press enter to continue...\n")
     print("You have", character["Money"], "Galleons.\n")
@@ -92,7 +88,6 @@ def buy_supplies(character: dict) -> None:
     "3": ["Rat", 10],
     "4": ["Toad", 5],
 }
-    # buying the pet
     for key, value in dict_pet.items():
         print("{}. {} - {} Galleons".format(key, dict_pet[key][0], dict_pet[key][1]))
     choice = ask_choice('Which pet do you want?', ["Owl", "Cat", "Rat", "Toad"])
@@ -106,7 +101,6 @@ def buy_supplies(character: dict) -> None:
     print("You chose: {} (-{} Galleons)".format(dict_pet[str(choice)][0], dict_pet[str(choice)][1]))
 
 
-    # final display of inventory
     print ("\nAll required items have been successfully purchased! Here is your final inventory:\n\nCharacter Profile")
     display_character(character)
 
@@ -122,10 +116,6 @@ def start_chapter_1() -> dict:
     input("\nPlease press enter to continue...")
     return character
 
-
-#################
-##### Tests #####
-#################
 
 if __name__ == "__main__":
     start_chapter_1()

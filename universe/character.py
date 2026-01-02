@@ -1,7 +1,4 @@
 def init_character(last_name: str, first_name: str, attributes: dict) -> dict:
-    """
-    function returning a dictionary of a new character using his last name, first name and a dictionary of attributes ({"Courage": 4})
-    """
     dico = {}
     dico["Last Name"] = last_name
     dico["First Name"] = first_name
@@ -12,9 +9,6 @@ def init_character(last_name: str, first_name: str, attributes: dict) -> dict:
     return dico
 
 def display_character(character: dict) -> None:
-    """
-    function displaying everything about a character passed as a parameter (dictionary)
-    """
     print("Character profile:")
     for key in character:
         print(key + ":", end=' ')
@@ -31,23 +25,14 @@ def display_character(character: dict) -> None:
             print(character[key])
 
 def modify_money(character: dict, amount: int) -> None:
-    """
-    function modifying the amount of money a character has (use negative value to substract an amount of money)
-    """
     character["Money"] += amount
 
 def add_item(character: dict, key: str, item: str) -> None:
-    """
-    function adding either an item in the inventory or a spell in the list of spells
-    """
     if not(key in ["Inventory", "Spells"]):
         raise TypeError("Key must be either 'Inventory' or 'Spells'")
     else:
         character[key].append(item)
 
-#################
-##### Tests #####
-#################
 
 if __name__ == '__main__':
     Harry = init_character("Potter", "Harry", {"Courage": 8, "Intelligence": 8, "Loyalty": 8, "Ambition": 8})
