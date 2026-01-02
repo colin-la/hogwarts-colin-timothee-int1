@@ -21,7 +21,7 @@ def ask_number(message: str, min_val=None, max_val=None) -> int:
         return anwser
 
 def ask_choice(message: str, options: list) -> int:
-    print_slow(message)
+    print(message)
     for x in range(len(options)):
         print(f"{x+1}. {options[x]}")
     result = ask_number("Your choice: ", 1, len(options))
