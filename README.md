@@ -132,6 +132,7 @@ put "./" (no need to go up in the folder tree)
 - Created print_slow function <br>   
 - Created cls command (for cleaner terminal) <br>
 - Created animation for "Press enter to continue ..." message<br>
+- Last commit: Final repository (complete and functional)
 </p>
 </details>
 
